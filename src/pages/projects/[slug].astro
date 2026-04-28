@@ -1,0 +1,173 @@
+---
+import { projects } from "../../data/projects.js";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={project.client} current="project">
+  <div class="hidden md:block">
+    <div class="mb-4 grid grid-cols-2">
+       <p class="col-span-2 text-4xl">{project.description}</p>
+      <img class="cover h-150 w-full" src="/images/1.png" alt="" />
+      <div class="items-end">
+        <h2>Who? {project.client}</h2>
+        <h2>When? {project.date}</h2>
+        <h2>What? {project.case}</h2>
+      </div>
+
+     
+    </div>
+
+    <div id="filterBar" class="flex justify-between">
+      <button data-view="big">big pics</button>
+      <button data-view="text">read more</button>
+      <button data-view="small">small pics</button>
+    </div>
+
+    <div id="views">
+      <div data-layout="big">
+        <div class="gallery gap-4">
+          {
+            project.gallery.map((img) => (
+              <img class="w-full"
+                src={img}
+                alt={project.title}
+              />
+            ))
+          }
+        </div>
+      </div>
+
+      <div data-layout="text" class="hidden">
+       
+          <p class="text mt-6 text-4xl mb-10">{project.text}</p>
+       
+      </div>
+
+      <div data-layout="small" class="hidden">
+        <div class="gallery grid grid-cols-3 gap-4">
+          {
+            project.gallery.map((img) => (
+              <img
+                src={img}
+                alt={project.title}
+               
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <button id="toTopBtn" class="to-top hidden"> To top </button>
+  </div>
+
+  <div class="md:hidden">
+    <img
+      src={project.img}
+      alt={project.client}
+      class="h-100 w-100 object-cover"
+    />
+    <h1 class="mt-4">{project.client}</h1>
+
+    <h2>Who? {project.client}</h2>
+    <h2>When? {project.date}</h2>
+    <h2>What? {project.case}</h2>
+    <h2>How? {project.programs}</h2>
+
+    <p class="mt-4 text-xl">{project.description}</p>
+
+    <div class="gallery mt-4">
+      {
+        project.gallery.map((img) => (
+          <img src={img} alt={project.title} />
+        ))
+      }
+    </div>
+  </div>
+
+  <style>
+    .text {
+      white-space: pre-line;
+    }
+    .gallery img {
+      padding-top: 6px;
+    }
+
+    #filterBar button {
+      opacity: 0.5;
+    }
+    #filterBar button:hover,
+    #filterBar button.active {
+      opacity: 1;
+    }
+    .to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 8px 12px;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .to-top.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .to-top {
+      transition: opacity 0.3s ease;
+    }
+  </style>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-view]");
+    const layouts = document.querySelectorAll("[data-layout]");
+    document.querySelector('[data-view="big"]').classList.add("active");
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const view = btn.dataset.view;
+
+        buttons.forEach((b) => b.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        layouts.forEach((layout) => {
+          layout.classList.add("hidden");
+        });
+
+        document
+          .querySelector(`[data-layout="${view}"]`)
+          .classList.remove("hidden");
+      });
+    });
+
+    const topBtn = document.getElementById("toTopBtn");
+    const filterBar = document.getElementById("filterBar");
+
+    window.addEventListener("scroll", () => {
+      const rect = filterBar.getBoundingClientRect();
+
+      if (rect.bottom < 0) {
+        topBtn.classList.remove("hidden");
+      } else {
+        topBtn.classList.add("hidden");
+      }
+    });
+
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  </script>
+</Layout>

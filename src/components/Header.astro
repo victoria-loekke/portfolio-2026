@@ -1,0 +1,54 @@
+---
+const { current = "" } = Astro.props;
+---
+
+<header class="site-header p-5 lg:p-6 2xl:p-8">
+  <nav class="grid grid-cols-[1fr_auto_1fr] items-center">
+    <div class="2lx:gap-8 flex gap-4 justify-self-start lg:gap-6">
+      <a href="/projects">Projects</a>
+      <a href="/about" class="hidden md:inline">About</a>
+    </div>
+
+    <a href="/" class="logo justify-self-center">vIcToRiA</a>
+
+    <div class="2lx:gap-8 flex gap-4 justify-self-end lg:gap-6">
+      <a target="_blank" href="https://www.instagram.com/victorialoekke" class="hidden md:inline">Follow</a>
+      <a href="/contact" class="hidden md:inline">Contact</a>
+      <button class="menu-btn md:hidden">Menu</button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu hidden">
+    <a href="/about">About</a>
+    <a href="/follow">Follow</a>
+    <a href="/contact">Contact</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    mix-blend-mode: exclusion;
+  }
+
+  .site-header a,
+  .site-header button {
+    color: white;
+    font-size: clamp(1rem, 1vw + 0.5rem, 2.2rem);
+    letter-spacing: 0.02em;
+    font-weight: 900;
+  }
+</style>
+
+<script>
+  const button = document.querySelector(".menu-btn");
+  const menu = document.querySelector(".mobile-menu");
+
+  button?.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>

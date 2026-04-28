@@ -1,0 +1,64 @@
+---
+const { project } = Astro.props;
+---
+
+<a
+  href={`/projects/${project.slug}`}
+  class="project-card"
+  data-project={project.slug}
+>
+  <img src={project.image} alt={project.title} />
+
+  <div class="overlay items-center">
+
+  <div class="flex flex-wrap items-baseline">
+     <h3 class="mt-2 black">Who? </h3>
+      <h3 class="mx-1">{project.client}</h3>
+  </div>
+    <div class="flex flex-wrap items-baseline">
+     <h3 class="mt-1 black">What? </h3>
+      <h3 class="mx-1">{project.case}</h3>
+  </div>
+    <div class="flex flex-wrap items-baseline">
+     <h3 class="mt-1 black">When? </h3>
+      <h3 class="mx-1">{project.date}</h3>
+  </div>
+  </div>
+</a>
+
+<style>
+  .black{
+    font-weight: 900;
+  }
+  .project-card {
+    position: relative;
+    display: block;
+  }
+
+  .project-card img {
+    width: 100%;
+    display: block;
+    filter: invert(0);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    background-color: white;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-card:hover .overlay,
+  .project-card.active .overlay {
+    opacity: 1;
+  }
+</style>

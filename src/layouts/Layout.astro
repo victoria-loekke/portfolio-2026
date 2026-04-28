@@ -1,0 +1,21 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+const { title = "Portfolio", current = "" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+
+  <body class="pt-19 p-5 lg:pt-25 lg:p-6 2xl:pt-30 2xl:p-8">
+    <Header current={current} />
+    <slot />
+
+  </body>
+</html>

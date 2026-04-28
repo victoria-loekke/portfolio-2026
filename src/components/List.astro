@@ -1,0 +1,11 @@
+---
+const { text, date, line } = Astro.props;
+---
+
+        <div class="grid grid-cols-[1fr_2fr] items-stretch border-t border-black py-4">
+      <h1 class="text-8xl font-black leading-none"> {date}</h1>
+      <div class="flex flex-col items-end pl-6">
+        <p class="text-4xl">{text}</p>
+        <p class="text-2xl"> {line}</p>
+      </div>
+    </div>

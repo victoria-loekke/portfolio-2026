@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectCardBigg from "../components/ProjectCardBigg.astro";
+import ProjectCardSmall from "../components/ProjectCardSmall.astro";
+import ProjectLinks from "../components/ProjectLinks.astro";
+import { projects } from "../data/projects.js";
+---
+
+<Layout title="Projects — Victoria Løkke" current="projects">
+
+  <div class="grid  grid-cols-[1fr] md:grid-cols-[1fr_1fr] gap-4 xl:grid-cols-[1fr_1fr_1fr] 2xl:grid-cols-[1fr_1fr_1fr_1fr]">
+    {projects.map((project) => <ProjectCardSmall project={project} />)}
+  </div>
+
+
+  <script>
+
+  </script>
+</Layout>
