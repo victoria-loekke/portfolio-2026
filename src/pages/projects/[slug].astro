@@ -120,7 +120,7 @@ const { project } = Astro.props;
       {
         project.process && (
           <div data-layout="process" class="hidden">
-            <div class="flex flex-col gap-10">
+            <div class="flex flex-col gap-6">
               {project.process.map((item) => (
                 <div class="grid gap-4 lg:grid-cols-[2fr_1fr]">
                   <img class="w-full" src={item.image} alt={project.client} />
