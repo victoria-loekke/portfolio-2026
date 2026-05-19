@@ -13,85 +13,164 @@ const { project } = Astro.props;
 ---
 
 <Layout title={project.client} current="project">
-  <div class="hidden md:block">
-    <div class="mb-4 grid grid-cols-2">
-       <p class="col-span-2 text-4xl">{project.description}</p>
-      <img class="cover h-150 w-full" src="/images/1.png" alt="" />
-      <div class="items-end">
-        <h2>Who? {project.client}</h2>
-        <h2>When? {project.date}</h2>
-        <h2>What? {project.case}</h2>
+  <div class="grid gap-8 pt-4 lg:min-h-[75vh] lg:grid-cols-2">
+    <!-- LEFT SIDE -->
+    <div class="flex flex-col justify-between">
+      <div></div>
+
+      <div class="grid grid-cols-2 gap-x-6 gap-y-4 pt-4">
+        <a href="/projects" class="col-span-2 opacity-50 hover:opacity-100">
+          go back
+        </a>
+
+        <!-- COLUMN 1 -->
+        <div>
+          <p class="mb-1 text-xs opacity-40">Client</p>
+          <p class="text-sm">{project.client}</p>
+
+          <p class="mt-4 mb-1 text-xs opacity-40">Type</p>
+          <p class="text-sm">{project.case}</p>
+
+          <p class="mt-4 mb-1 text-xs opacity-40">Date & Duration</p>
+          <p class="text-sm">
+            {project.date}, {project.duration}
+          </p>
+        </div>
+
+        <!-- COLUMN 2 -->
+        <div>
+          <p class="mb-1 text-xs opacity-40">Tools</p>
+
+          {
+            project.programs ? (
+              project.programs.map((p) => <p class="text-sm">{p}</p>)
+            ) : (
+              <p class="text-sm">—</p>
+            )
+          }
+
+          <p class="mt-4 mb-1 text-xs opacity-40">Link</p>
+          <p class="text-sm">{project.link ?? "—"}</p>
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="col-span-2 pt-4">
+          <p class="mb-2 text-xs opacity-40">Description</p>
+
+          <p class="text-lg leading-snug md:text-2xl">
+            {project.description}
+          </p>
+        </div>
       </div>
-
-     
     </div>
 
-    <div id="filterBar" class="flex justify-between">
-      <button data-view="big">big pics</button>
-      <button data-view="text">read more</button>
-      <button data-view="small">small pics</button>
+    <!-- HERO IMAGE -->
+    <div>
+      <img
+        src={project.image}
+        alt={project.client}
+        class="w-full object-cover md:hidden lg:block lg:h-[75vh]"
+      />
     </div>
+  </div>
 
+  <!-- GALLERY -->
+  <div class="mt-8 flex flex-col gap-3 md:hidden">
+    {
+      project.gallery.map((img) => (
+        <img class="w-full object-cover" src={img} alt={project.client} />
+      ))
+    }
+  </div>
+
+  <div id="filterBar" class="mt-8 hidden justify-between md:flex">
+    <button data-view="project">the project</button>
+    {project.process && <button data-view="process">process</button>}
+    <button data-view="text">read more</button>
+    <button data-view="gallery">gallery</button>
+  </div>
+
+  <div class="hidden md:block">
     <div id="views">
-      <div data-layout="big">
-        <div class="gallery gap-4">
+      <div data-layout="project">
+        <div class="flex flex-col gap-4">
+          <!-- VIDEOS -->
+          {
+            project.videos?.map((video) => (
+              <video
+                class="project-video w-full"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source src={video} type="video/mp4" />
+              </video>
+            ))
+          }
+
+          <!-- IMAGES -->
           {
             project.gallery.map((img) => (
-              <img class="w-full"
-                src={img}
-                alt={project.title}
-              />
+              <img class="w-full" src={img} alt={project.client} />
             ))
           }
         </div>
       </div>
+      {
+        project.process && (
+          <div data-layout="process" class="hidden">
+            <div class="flex flex-col gap-16">
+              {project.process.map((item) => (
+                <div class="grid gap-4 lg:grid-cols-[2fr_1fr]">
+                  <img class="w-full" src={item.image} alt={project.client} />
+
+                  <div class="flex items-end">
+                    <p class="text-2xl leading-relaxed">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      }
 
       <div data-layout="text" class="hidden">
-       
-          <p class="text mt-6 text-4xl mb-10">{project.text}</p>
-       
+        <p class="text mt-6 mb-10 text-4xl">{project.text}</p>
       </div>
 
-      <div data-layout="small" class="hidden">
-        <div class="gallery grid grid-cols-3 gap-4">
+      <div data-layout="gallery" class="hidden">
+        <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
           {
-            project.gallery.map((img) => (
-              <img
-                src={img}
-                alt={project.title}
-               
-              />
+            project.gallery.map((img, index) => (
+              <button
+                class="gallery-item aspect-square overflow-hidden"
+                data-index={index}
+                data-image={img}
+              >
+                <img
+                  class="h-full w-full object-cover transition duration-300 hover:scale-[1.02]"
+                  src={img}
+                  alt={project.client}
+                />
+              </button>
             ))
           }
         </div>
       </div>
-    </div>
-    <button id="toTopBtn" class="to-top hidden"> To top </button>
-  </div>
+      <div id="lightbox" class="lightbox hidden">
+        <button id="closeLightbox" class="close-btn"> × </button>
 
-  <div class="md:hidden">
-    <img
-      src={project.img}
-      alt={project.client}
-      class="h-100 w-100 object-cover"
-    />
-    <h1 class="mt-4">{project.client}</h1>
+        <button id="prevBtn" class="nav-btn prev"> ← </button>
 
-    <h2>Who? {project.client}</h2>
-    <h2>When? {project.date}</h2>
-    <h2>What? {project.case}</h2>
-    <h2>How? {project.programs}</h2>
+        <img id="lightboxImg" src="" alt="" />
 
-    <p class="mt-4 text-xl">{project.description}</p>
-
-    <div class="gallery mt-4">
-      {
-        project.gallery.map((img) => (
-          <img src={img} alt={project.title} />
-        ))
-      }
+        <button id="nextBtn" class="nav-btn next"> → </button>
+      </div>
     </div>
   </div>
+
+  <button id="toTopBtn" class="to-top hidden"> To top </button>
 
   <style>
     .text {
@@ -125,12 +204,60 @@ const { project } = Astro.props;
     .to-top {
       transition: opacity 0.3s ease;
     }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .lightbox.hidden {
+      display: none;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      object-fit: contain;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      color: white;
+      z-index: 10000;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      z-index: 10000;
+    }
+
+    .prev {
+      left: 24px;
+    }
+
+    .next {
+      right: 24px;
+    }
+
+    .gallery-item {
+      cursor: pointer;
+    }
   </style>
 
   <script>
     const buttons = document.querySelectorAll("[data-view]");
     const layouts = document.querySelectorAll("[data-layout]");
-    document.querySelector('[data-view="big"]').classList.add("active");
+    document.querySelector('[data-view="project"]').classList.add("active");
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -168,6 +295,100 @@ const { project } = Astro.props;
         top: 0,
         behavior: "smooth",
       });
+    });
+
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+
+    const closeLightbox = document.getElementById("closeLightbox");
+
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    const images = [...galleryItems].map((item) => item.dataset.image);
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+
+      lightboxImg.src = images[currentIndex];
+
+      lightbox.classList.remove("hidden");
+
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeBox() {
+      lightbox.classList.add("hidden");
+
+      document.body.style.overflow = "";
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+
+      lightboxImg.src = images[currentIndex];
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+
+      lightboxImg.src = images[currentIndex];
+    }
+
+    galleryItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        openLightbox(Number(item.dataset.index));
+      });
+    });
+
+    closeLightbox.addEventListener("click", closeBox);
+
+    nextBtn.addEventListener("click", showNext);
+
+    prevBtn.addEventListener("click", showPrev);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeBox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.classList.contains("hidden")) return;
+
+      if (e.key === "Escape") closeBox();
+
+      if (e.key === "ArrowRight") showNext();
+
+      if (e.key === "ArrowLeft") showPrev();
+    });
+  </script>
+  <script>
+    const videos = document.querySelectorAll(".project-video");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      },
+      {
+        threshold: 0.4,
+      },
+    );
+
+    videos.forEach((video) => {
+      observer.observe(video);
     });
   </script>
 </Layout>

@@ -2,61 +2,161 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Home — Victoria Løkke" current="home">
-  <main>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    
-    <section class="light"></section>
-<section class="dark"></section>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
-    <h1>Hej 👋</h1>
-    <p>Her er min portfolio. (Kort intro)</p>
-    <p><a href="/projects">Se mine projekter →</a></p>
+<Layout title="Victoria Løkke" current="home">
+  <main class="fixed inset-0 overflow-hidden">
+    <div class="big-text">
+      <img src="/images/Victorias.png" alt="Victoria's" />
+    </div>
 
+    <div
+      class="img top-left top-32 left-34 hidden h-auto w-55 lg:block"
+      data-label="Toscana, summer 2002"
+    >
+      <img
+        class="opacity-80 hover:opacity-100"
+        src="/images/privat/1.jpg"
+        alt="me as a baby"
+      />
+    </div>
+    <div class="img top-right top-35 right-60 hidden h-auto w-60 lg:block">
+      <img
+        class="opacity-80 hover:opacity-100"
+        src="/images/privat/1.jpg"
+        alt=""
+      />
+    </div>
+    <div class="img bottom-left bottom-22 left-14 hidden h-auto w-50 lg:block">
+      <img
+        class="opacity-80 hover:opacity-100"
+        src="/images/privat/art.jpg"
+        alt=""
+      />
+    </div>
+    <div
+      class="img bottom-right right-30 bottom-22 hidden h-auto w-50 lg:block"
+    >
+      <img
+        class="opacity-80 hover:opacity-100"
+        src="/images/privat/babyvic.jpg"
+        alt=""
+      />
+    </div>
+
+    <div class="center-text">
+      <p class="text-lg md:text-xl lg:text-2xl">
+        Portfolio<br />Coded Designer<br />Copenhagen based
+      </p>
+    </div>
+
+    <h4 class="year fixed right-6 bottom-4">2026</h4>
   </main>
+
+  <div class="cursor-label" id="cursorLabel"></div>
+
+  <script>
+    const label = document.getElementById("cursorLabel");
+    document.addEventListener("mousemove", (e) => {
+      label.style.left = e.clientX + "px";
+      label.style.top = e.clientY + "px";
+    });
+    document.querySelectorAll(".img[data-label]").forEach((photo) => {
+      photo.addEventListener("mouseenter", () => {
+        label.textContent = photo.dataset.label;
+        label.classList.add("visible");
+      });
+      photo.addEventListener("mouseleave", () => {
+        label.classList.remove("visible");
+      });
+    });
+  </script>
 </Layout>
 
 <style>
-  section {
-  height: 100vh;
-}
+  .big-text {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.light {
-  background: white;
-}
+    pointer-events: none;
+  }
 
-.dark {
-  background: black;
-}
+  .big-text img {
+    rotate: -10deg;
+    margin-left: -20%;
+    opacity: 30%;
+    margin-top: -50px;
+  }
+
+  .img {
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cursor-label {
+    position: fixed;
+    pointer-events: none;
+    font-size: clamp(0.9rem, 1vw + 0.5rem, 2.2rem);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    color: #111;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    z-index: 9999;
+    white-space: nowrap;
+    transform: translate(14px, -6px);
+  }
+  .cursor-label.visible {
+    opacity: 1;
+  }
+  .top-left {
+    animation-delay: 0.4s;
+  }
+
+  .top-right {
+    animation-delay: 0.6s;
+  }
+
+  .bottom-left {
+    animation-delay: 0.8s;
+  }
+
+  .bottom-right {
+    animation-delay: 1s;
+  }
+
+  .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards 1.2s;
+  }
+
+  .year {
+    font-size: clamp(0.9rem, 1vw + 0.5rem, 2.2rem);
+    letter-spacing: 0.02em;
+    font-weight: 900;
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards 1.4s;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 </style>

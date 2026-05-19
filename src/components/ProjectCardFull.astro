@@ -10,26 +10,25 @@ const { project } = Astro.props;
   <img src={project.image} alt={project.title} />
 
   <div class="overlay">
- 
-  <div class="flex flex-wrap items-baseline">
-     <h3 class="mt-2 black">Who? </h3>
+    <div class="flex flex-wrap items-baseline">
+      <h3 class="black mt-2">Who?</h3>
       <h3 class="mx-1">{project.client}</h3>
-  </div>
+    </div>
     <div class="flex flex-wrap items-baseline">
-     <h3 class="mt-1 black">What? </h3>
+      <h3 class="black mt-1">What?</h3>
       <h3 class="mx-1">{project.case}</h3>
-  </div>
+    </div>
     <div class="flex flex-wrap items-baseline">
-     <h3 class="mt-1 black">When? </h3>
+      <h3 class="black mt-1">When?</h3>
       <h3 class="mx-1">{project.date}</h3>
-  </div>
+    </div>
   </div>
 </a>
 
 <style>
-    .black{
-        font-weight: 900;
-    }
+  .black {
+    font-weight: 900;
+  }
   .project-card {
     position: relative;
     display: block;
@@ -51,7 +50,6 @@ const { project } = Astro.props;
     flex-direction: column;
     justify-content: flex-end;
     padding: 1rem;
-
     transition: opacity 0.3s ease;
   }
 </style>

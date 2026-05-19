@@ -4,24 +4,37 @@ const { current = "" } = Astro.props;
 
 <header class="site-header p-5 lg:p-6 2xl:p-8">
   <nav class="grid grid-cols-[1fr_auto_1fr] items-center">
-    <div class="2lx:gap-8 flex gap-4 justify-self-start lg:gap-6">
+    <div class="flex gap-4 justify-self-start lg:gap-6 2xl:gap-8">
       <a href="/projects">Projects</a>
       <a href="/about" class="hidden md:inline">About</a>
     </div>
 
     <a href="/" class="logo justify-self-center">vIcToRiA</a>
 
-    <div class="2lx:gap-8 flex gap-4 justify-self-end lg:gap-6">
-      <a target="_blank" href="https://www.instagram.com/victorialoekke" class="hidden md:inline">Follow</a>
+    <div class="flex gap-4 justify-self-end lg:gap-6 2xl:gap-8">
+      <a
+        target="_blank"
+        href="https://www.instagram.com/victorialoekke"
+        class="hidden md:inline">Follow</a
+      >
       <a href="/contact" class="hidden md:inline">Contact</a>
       <button class="menu-btn md:hidden">Menu</button>
     </div>
   </nav>
 
-  <div class="mobile-menu hidden">
-    <a href="/about">About</a>
-    <a href="/follow">Follow</a>
-    <a href="/contact">Contact</a>
+  <div class="mobile-menu">
+    <button class="close-menu">×</button>
+
+    <div class="mobile-menu-inner">
+      <a href="/projects">Projects</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a
+        href="https://www.instagram.com/victorialoekke"
+        target="_blank"
+        rel="noopener noreferrer">Follow</a
+      >
+    </div>
   </div>
 </header>
 
@@ -35,20 +48,94 @@ const { current = "" } = Astro.props;
     mix-blend-mode: exclusion;
   }
 
-  .site-header a,
-  .site-header button {
+  nav a,
+  nav button {
     color: white;
     font-size: clamp(1rem, 1vw + 0.5rem, 2.2rem);
     letter-spacing: 0.02em;
     font-weight: 900;
   }
+
+  .site-header a:hover {
+    opacity: 0.5;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+
+    z-index: 9999;
+
+    isolation: isolate;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .mobile-menu-inner a {
+    font-size: 2rem;
+
+    line-height: 0.6;
+    color: white;
+
+    transition: opacity 0.2s ease;
+  }
+
+  .mobile-menu-inner a:hover {
+    opacity: 0.5;
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    font-size: 5rem !important;
+    font-weight: 300;
+
+    line-height: 1;
+
+    color: white !important;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    opacity: 1 !important;
+  }
 </style>
 
 <script>
-  const button = document.querySelector(".menu-btn");
+  const openButton = document.querySelector(".menu-btn");
+  const closeButton = document.querySelector(".close-menu");
   const menu = document.querySelector(".mobile-menu");
 
-  button?.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+  openButton?.addEventListener("click", () => {
+    menu.classList.add("active");
+  });
+
+  closeButton?.addEventListener("click", () => {
+    menu.classList.remove("active");
   });
 </script>

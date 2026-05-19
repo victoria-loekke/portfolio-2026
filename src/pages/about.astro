@@ -1,14 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProjectCardGrid from "../components/ProjectCardGrid.astro";
-import ProjectCardPhone from "../components/ProjectCardPhone.astro";
-import { projects } from "../data/projects.js";
-import BulletSchool from "../components/BulletSchool.astro";
 import List from "../components/List.astro";
-import ProjectCardFeed from "../components/ProjectCardFeed.astro";
 ---
 
-<Layout title="About Victoria" current="projects">
+<Layout title="About Victoria" current="about">
   <div class="hidden lg:block">
     <div id="filterBar" class="flex justify-between">
       <button data-view="about">about me</button>
@@ -18,85 +13,149 @@ import ProjectCardFeed from "../components/ProjectCardFeed.astro";
 
     <div id="views">
       <div data-layout="about">
-        <div class="grid grid-cols-2 gap-4">
-          <img src="/images/dig.jpg" alt="" />
+        <div class="relative my-30 flex justify-center">
+          <div class="w-[350px]">
+            <img class="block w-full" src="/images/privat/1.jpg" alt="" />
+          </div>
+
+          <div
+            class="absolute top-1/2 left-1/2 z-10 w-[92%] max-w-[1400px] -translate-x-1/2 -translate-y-1/2"
+          >
+            <p
+              class="text-center text-[clamp(1.8rem,2vw,3rem)] leading-none font-medium"
+            >
+              Hi, I'm Victoria Løkke, a front-end developer and designer from
+              Copenhagen, Denmark, currently studying Coded Design at the Danish
+              School of media and design, where I get to do what I love most:
+              combining design with code. I enjoy the process of taking
+              something from a visual idea to a fully realised digital
+              experience, paying attention to both how it looks and how it
+              works. For me, good design and good code go hand in hand. When I'm
+              not at my laptop, you'll probably find me working on a knitting
+              project or exploring the world.
+            </p>
+          </div>
+        </div>
+
+        <a>Things i love:</a>
+        <div class="mt-2 grid grid-cols-[5fr_2fr]">
+          <div class="love grid grid-cols-4 gap-4">
+            <div>
+              <img src="/images/privat/love2.jpg" alt="" />
+              <p class="pt-2 text-center">(1)</p>
+            </div>
+
+            <div>
+              <img src="/images/privat/love1.jpg" alt="" />
+              <p class="pt-2 text-center">(2)</p>
+            </div>
+            <div>
+              <img src="/images/privat/love12.jpg" alt="" />
+              <p class="pt-2 text-center">(3)</p>
+            </div>
+            <div>
+              <img src="/images/privat/love3.jpg" alt="" />
+              <p class="pt-2 text-center">(4)</p>
+            </div>
+            <div>
+              <img src="/images/privat/love6.jpg" alt="" />
+              <p class="pt-2 text-center">(5)</p>
+            </div>
+            <div>
+              <img src="/images/privat/love5.jpg" alt="" />
+              <p class="pt-2 text-center">(6)</p>
+            </div>
+            <div>
+              <img src="/images/privat/love9.jpg" alt="" />
+              <p class="pt-2 text-center">(7)</p>
+            </div>
+
+            <div>
+              <img src="/images/privat/love11.jpg" alt="" />
+              <p class="pt-2 text-center">(8)</p>
+            </div>
+          </div>
 
           <div>
-         <p class="text-3xl">Hi, I'm Victoria Løkke — a front-end developer and designer from Copenhagen, Denmark, currently studying Coded Design at the Danish School of media and design, where I get to do what I love most: combining thoughtful design with clean, purposeful code.
-I enjoy the process of taking something from a visual idea to a fully realised digital experience — paying attention to both how it looks and how it works. For me, good design and good code go hand in hand.
-When I'm not at my laptop, you'll probably find me working on a knitting project or exploring the world. 
-</p>
+            <p class="things px-6">
+              (1) Pasta, lots of pasta<br />
+              (2) Trips to the beach<br />
+              (3) Alma, my boyfriends dog <br />
+              (4) Prince charming (my boyfriend)<br />
+              (5) Long table dinner parties<br />
+              (6) Exploring the world<br />
+              (7) Chess, I'm best after a glass of wine (or two)<br />
+              (8) Cheese platter w. a big cold beer
+            </p>
           </div>
         </div>
       </div>
     </div>
 
- <div data-layout="school" class="hidden">
-  <div class="flex flex-col">
+    <div data-layout="school" class="hidden">
+      <div class="flex flex-col border-t border-black">
+        <List
+          text="Danish School of Media and Journalism"
+          date="2024—27"
+          line="Coded Design — Visual Communication"
+        />
 
-     <List
-            text="Danish School of Media and Journalism"
-            date="2024—27"
-            line="Coded Design — Visual Communication"
-          />
+        <List
+          text="Copenhagen School of Design and Technology"
+          date="2020—22"
+          line="Multimediadesign"
+        />
 
-              <List
-            text="Copenhagen School of Design and Technology"
-            date="2020-22"
-            line="Multimediadesign"
-          />
+        <List
+          text="Metaforá Studio Arts Bareclona"
+          date="2019"
+          line="Semester in Fine Arts"
+        />
 
+        <List
+          text="Ordrup Gymnasium"
+          date="2015—18"
+          line="Upper Secondary Education"
+        />
+      </div>
+    </div>
 
-    <List
-            text="Metaforá Studio Arts Bareclona"
-            date="2019"
-            line="Semester in Fine Arts"
-          />
+    <div data-layout="work" class="hidden">
+      <div class="flex flex-col border-t border-black">
+        <List
+          text="Red Cross Denmark"
+          date="2025—"
+          line="Volunteer work in a Red Cross second-hand shop."
+        />
 
+        <List
+          text="Indepentent freelancer"
+          date="2023—"
+          line="Designing and developing visual identities, websites and digital experiences."
+        />
 
-    <List
-            text="Ordrup Gymnasium"
-            date="2015-18"
-            line="Upper Secondary Education"
-          />
-   </div>
-</div>
-
- <div data-layout="work" class="hidden">
-  <div class="flex flex-col">
-
-     <List
-            text="Red Cross Denmark"
-            date="2025-"
-            line="Voluenteer"
-          />
-
-              <List
-            text="Indepentent freelancer"
-            date="2023-"
-            line="Freelancer as web-developer/grapic designer"
-          />
-
-    <List
-            text="Founder of Vicz Gemz"
-            date="2022-24"
-            line="Started a tooth gems shop working with brands like Ganni & Tiktok"
-          />
-
-
-    <List
-            text="Ordrup Gymnasium"
-            date="2015-18"
-            line="Upper Secondary Education"
-          />
-   </div>
-</div>
+        <List
+          text="Founder of Vicz Gemz"
+          date="2022—24"
+          line="Founded a tooth gem brand collaborating with brands including Ganni and TikTok."
+        />
+      </div>
+    </div>
+  </div>
+  <div class="lg:hidden">
+    <img class="block w-full" src="/images/privat/1.png" alt="" />
+    <p class="text-center text-lg leading-none font-medium">
+      Hi, I'm Victoria Løkke, a front-end developer and designer from
+      Copenhagen, Denmark, currently studying Coded Design at the Danish School
+      of media and design, where I get to do what I love most: combining design
+      with code. I enjoy the process of taking something from a visual idea to a
+      fully realised digital experience, paying attention to both how it looks
+      and how it works. For me, good design and good code go hand in hand. When
+      I'm not at my laptop, you'll probably find me working on a knitting
+      project or exploring the world.
+    </p>
   </div>
 </Layout>
-
-<div class="lg:hidden">
-  <p>mobil version</p>
-</div>
 
 <style>
   .prik {
@@ -117,6 +176,16 @@ When I'm not at my laptop, you'll probably find me working on a knitting project
     padding: 8px 12px;
     cursor: pointer;
     z-index: 100;
+  }
+
+  .things {
+    line-height: 2;
+  }
+
+  .love img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
   }
 
   .to-top.hidden {

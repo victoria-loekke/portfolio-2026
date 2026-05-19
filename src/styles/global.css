@@ -35,25 +35,16 @@ html {
   font-display: swap;
 }
 
-@font-face {
-  font-family: "SuisseIntl Regular";
-  src: url("SuisseIntl-Regular.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
 body {
   margin: 0;
-  background: white;
+  background: #f5f3ef;
 }
 * {
   box-sizing: border-box;
 }
 h1 {
   font-family: "SuisseIntl Regular", sans-serif;
-
-  font-weight: 400;
+  font-weight: 600;
 }
 h2 {
   font-family: "SuisseIntl Regular", sans-serif;
