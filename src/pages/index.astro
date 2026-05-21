@@ -6,11 +6,11 @@ import Layout from "../layouts/Layout.astro";
   <div
     class="absolute top-[50%] lg:top-[51%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
   >
-    <div class="text-mask">
+    <div class="text-mask fade-blur">
       <h1>VICTORIAS</h1>
     </div>
 
-    <div class="text-mask mt-14 lg:mt-6">
+    <div class="text-mask fade-blur mt-14 lg:mt-6">
       <h2>Portfolio</h2>
     </div>
   </div>
@@ -33,6 +33,21 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+.fade-blur {
+  animation: blurFade 1.5s ease forwards;
+}
+
+@keyframes blurFade {
+  from {
+    filter: blur(8px);
+
+  }
+
+  to {
+    filter: blur(0px);
+  
+  }
+}
   .text-mask {
     background-image: url("/images/test.jpg");
     background-size: cover;
@@ -43,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
 
     color: transparent;
 
-    filter: blur(1px) contrast(120%) saturate(120%);
+    filter: contrast(120%) saturate(120%);
   }
 
   .text-mask h1 {
