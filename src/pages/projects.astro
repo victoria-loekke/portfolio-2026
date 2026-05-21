@@ -19,7 +19,9 @@ import ProjectCardFeed from "../components/ProjectCardFeed.astro";
 
     <div id="views">
       <div data-layout="grid">
-        <div class="grid grid-cols-2 gap-4 lg:grid-cols-3 2xl:grid-cols-4">
+        <div
+          class="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4"
+        >
           {projects.map((project) => <ProjectCardGrid project={project} />)}
         </div>
       </div>
@@ -52,8 +54,7 @@ import ProjectCardFeed from "../components/ProjectCardFeed.astro";
     </div>
   </div>
 
-
- <script>
+  <script>
     import "../scripts/projects.js";
   </script>
 </Layout>
