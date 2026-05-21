@@ -13,16 +13,16 @@ import List from "../components/List.astro";
 
     <div id="views">
       <div data-layout="about">
-        <div class="relative my-30 flex justify-center">
+        <div class="relative my-25 flex justify-center">
           <div class="w-[350px]">
             <img class="block w-full" src="/images/privat/1.jpg" alt="" />
           </div>
 
           <div
-            class="absolute top-1/2 left-1/2 z-10 w-[92%] max-w-[1400px] -translate-x-1/2 -translate-y-1/2"
+            class="ommig absolute top-1/2 left-1/2 z-10 w-[92%] max-w-[1400px] -translate-x-1/2 -translate-y-1/2"
           >
             <p
-              class="text-center text-[clamp(1.8rem,2vw,3rem)] leading-none font-medium"
+              class="ommig text-center text-[clamp(1.8rem,2vw,3rem)] leading-none font-medium"
             >
               Hi, I'm Victoria Løkke, a front-end developer and designer from
               Copenhagen, Denmark, currently studying Coded Design at the Danish
@@ -143,7 +143,7 @@ import List from "../components/List.astro";
     </div>
   </div>
   <div class="lg:hidden">
-    <img class="block w-full" src="/images/privat/1.png" alt="" />
+    <img class="block w-full" src="/images/privat/1.jpg" alt="" />
     <p class="text-center text-lg leading-none font-medium">
       Hi, I'm Victoria Løkke, a front-end developer and designer from
       Copenhagen, Denmark, currently studying Coded Design at the Danish School
@@ -162,21 +162,6 @@ import List from "../components/List.astro";
     font-size: 4rem;
     margin: 0;
   }
-  #filterBar button {
-    opacity: 0.5;
-  }
-  #filterBar button:hover,
-  #filterBar button.active {
-    opacity: 1;
-  }
-  .to-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    padding: 8px 12px;
-    cursor: pointer;
-    z-index: 100;
-  }
 
   .things {
     line-height: 2;
@@ -188,13 +173,9 @@ import List from "../components/List.astro";
     object-fit: cover;
   }
 
-  .to-top.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .to-top {
-    transition: opacity 0.3s ease;
+  .ommig {
+    mix-blend-mode: exclusion;
+    color: white;
   }
 </style>
 

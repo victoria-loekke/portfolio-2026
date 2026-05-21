@@ -179,32 +179,6 @@ const { project } = Astro.props;
     .gallery img {
       padding-top: 6px;
     }
-
-    #filterBar button {
-      opacity: 0.5;
-    }
-    #filterBar button:hover,
-    #filterBar button.active {
-      opacity: 1;
-    }
-    .to-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      padding: 8px 12px;
-      cursor: pointer;
-      z-index: 100;
-    }
-
-    .to-top.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .to-top {
-      transition: opacity 0.3s ease;
-    }
-
     .lightbox {
       position: fixed;
       inset: 0;

@@ -3,160 +3,99 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Victoria Løkke" current="home">
-  <main class="fixed inset-0 overflow-hidden">
-    <div class="big-text">
-      <img src="/images/Victorias.png" alt="Victoria's" />
+
+
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+    <div class="text-mask">
+      <h1>VICTORIAS</h1>
     </div>
 
-    <div
-      class="img top-left top-32 left-34 hidden h-auto w-55 lg:block"
-      data-label="Toscana, summer 2002"
-    >
-      <img
-        class="opacity-80 hover:opacity-100"
-        src="/images/privat/1.jpg"
-        alt="me as a baby"
-      />
+    <div class="text-mask">
+      <h2>Portfolio</h2>
     </div>
-    <div class="img top-right top-35 right-60 hidden h-auto w-60 lg:block">
-      <img
-        class="opacity-80 hover:opacity-100"
-        src="/images/privat/1.jpg"
-        alt=""
-      />
-    </div>
-    <div class="img bottom-left bottom-22 left-14 hidden h-auto w-50 lg:block">
-      <img
-        class="opacity-80 hover:opacity-100"
-        src="/images/privat/art.jpg"
-        alt=""
-      />
-    </div>
-    <div
-      class="img bottom-right right-30 bottom-22 hidden h-auto w-50 lg:block"
-    >
-      <img
-        class="opacity-80 hover:opacity-100"
-        src="/images/privat/babyvic.jpg"
-        alt=""
-      />
-    </div>
+  </div>
 
-    <div class="center-text">
-      <p class="text-lg md:text-xl lg:text-2xl">
-        Portfolio<br />Coded Designer<br />Copenhagen based
-      </p>
-    </div>
-
-    <h4 class="year fixed right-6 bottom-4">2026</h4>
-  </main>
-
-  <div class="cursor-label" id="cursorLabel"></div>
-
-  <script>
-    const label = document.getElementById("cursorLabel");
-    document.addEventListener("mousemove", (e) => {
-      label.style.left = e.clientX + "px";
-      label.style.top = e.clientY + "px";
-    });
-    document.querySelectorAll(".img[data-label]").forEach((photo) => {
-      photo.addEventListener("mouseenter", () => {
-        label.textContent = photo.dataset.label;
-        label.classList.add("visible");
-      });
-      photo.addEventListener("mouseleave", () => {
-        label.classList.remove("visible");
-      });
-    });
-  </script>
+  <div
+    class="info absolute top-1/2 left-1/2 z-1000 -translate-x-1/2 -translate-y-1/2 text-center"
+  >
+    <p>
+      coded designer<br />
+      front-end developer<br />
+      copenhagen based
+    </p>
+  </div>
+  <div class="year">2026</div>
 </Layout>
 
 <style>
-  .big-text {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
+  .text-mask {
+    background-image: url("/images/privat/1.jpg");
+    background-size: cover;
+    background-position: center;
 
-    pointer-events: none;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    filter: blur(1px) contrast(120%) saturate(120%);
   }
 
-  .big-text img {
-    rotate: -10deg;
-    margin-left: -20%;
-    opacity: 30%;
-    margin-top: -50px;
-  }
-
-  .img {
-    position: absolute;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards;
-  }
-
-  .img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .cursor-label {
-    position: fixed;
-    pointer-events: none;
-    font-size: clamp(0.9rem, 1vw + 0.5rem, 2.2rem);
+  .text-mask h1 {
+    font-family: "Anton", sans-serif;
+    font-size: 18vw;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
     font-weight: 900;
-    letter-spacing: 0.02em;
-    color: #111;
-    opacity: 0;
-    transition: opacity 0.15s ease;
-    z-index: 9999;
-    white-space: nowrap;
-    transform: translate(14px, -6px);
-  }
-  .cursor-label.visible {
-    opacity: 1;
-  }
-  .top-left {
-    animation-delay: 0.4s;
+    text-transform: uppercase;
+    margin: 0;
   }
 
-  .top-right {
-    animation-delay: 0.6s;
+  .text-mask h2 {
+    font-family: "Monsieur", cursive;
+    font-size: 14vw;
+    line-height: 1.4;
+    font-weight: 400;
+    margin: 0;
   }
 
-  .bottom-left {
-    animation-delay: 0.8s;
-  }
-
-  .bottom-right {
-    animation-delay: 1s;
-  }
-
-  .center-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 0.8s ease forwards 1.2s;
+  .info p {
+    font-family: "Arial Narrow", sans-serif;
+    font-size: clamp(0.7rem, 0.8vw, 1rem);
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.04em;
   }
 
   .year {
-    font-size: clamp(0.9rem, 1vw + 0.5rem, 2.2rem);
-    letter-spacing: 0.02em;
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    font-size: clamp(0.9rem, 1vw + 0.4rem, 1.2rem);
     font-weight: 900;
-    opacity: 0;
-    animation: fadeIn 0.6s ease forwards 1.4s;
+    z-index: 20;
   }
 
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
+  /* MOBILE */
+
+  @media (max-width: 768px) {
+    .top-mask {
+      top: 4vw;
+    }
+
+    .top-mask h1 {
+      font-size: 24vw;
+      line-height: 0.9;
+    }
+
+    .bottom-mask {
+      bottom: 8vw;
+    }
+
+    .bottom-mask h2 {
+      font-size: 22vw;
     }
   }
 </style>
