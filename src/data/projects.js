@@ -32,13 +32,13 @@ export const projects = [
      "/images/aaben/9.jpg",
     ],
     videos: [
-  "/videos/aaben/v1.mov",
+  "/videos/aaben/v1.mp4",
   "/videos/aaben/v2.mp4"
 ],
   process: [
   {
     image: "/images/aaben/p1.jpg",
-    text: "Initial visual reserach references around texture, nightlife, movement and distorted reflections to shape the visual atmosphere of the generator."
+    text: "Initial visual reserach references around texture, nightlife, mp4ement and distorted reflections to shape the visual atmosphere of the generator."
   },
 
   {
@@ -91,10 +91,10 @@ description:
          
     ],
     videos: [
-  "/videos/snowqueen/v1.MOV",
-    "/videos/snowqueen/v2.mov",
-      "/videos/snowqueen/v3.mov",
-        "/videos/snowqueen/v4.mov",
+  "/videos/snowqueen/v1.mp4",
+    "/videos/snowqueen/v2.mp4",
+      "/videos/snowqueen/v3.mp4",
+        "/videos/snowqueen/v4.mp4",
 ],
   process: [
   {
@@ -188,7 +188,7 @@ description:
     ],
 
         videos: [
-  "/videos/hk/v1.mov",
+  "/videos/hk/v1.mp4",
 
 ],
   },
@@ -279,7 +279,7 @@ The visual identity combines checkerboard patterns, saturated colors and retro-i
 
     ],
     videos:[
-      "/videos/hf/v1.mov",
+      "/videos/hf/v1.mp4",
     ]
   },
 
@@ -309,7 +309,7 @@ The visual identity combines checkerboard patterns, saturated colors and retro-i
 
     ],
        videos: [
-     "/videos/torsk/1.mov",
+     "/videos/torsk/1.mp4",
 
     ],
   },
@@ -325,7 +325,7 @@ The visual identity combines checkerboard patterns, saturated colors and retro-i
       text: `SheCanPlay is a Danish non-profit association supporting young women and gender minorities between 15 and 26 in building sustainable, professional careers in music - through mentoring, industry access, and community.
       Our concept was "Introducing", the idea that SheCanPlay introduces its members to the music industry, to opportunities, and to each other. This concept shaped every visual and coded decision we made.
       The visual identity was built around dots as a core graphic element, reflecting both the community structure and the musical connection to sound and rhythm. The colour palette landed on a bold pink with hand-drawn doodles, giving the brand a warm, energetic and personal feel. We also developed a coded dot generator, allowing users to upload images or videos and generate dotted outputs, with full control over dot size, colour, gap and density.
-      I coded a live music visualiser for SheCanPlay: a web-based asset that listens to audio input and generates real-time visuals that react to the music, with bass controlling dot size and movement, midrange controlling how many dots are active, and treble driving the colours.
+      I coded a live music visualiser for SheCanPlay: a web-based asset that listens to audio input and generates real-time visuals that react to the music, with bass controlling dot size and mp4ement, midrange controlling how many dots are active, and treble driving the colours.
       The project was created as a group school project at DMJX, covering visual identity, web development and coded tools.`,
     image: "/images/scp/square.jpg",
     gallery: [
@@ -337,9 +337,9 @@ The visual identity combines checkerboard patterns, saturated colors and retro-i
       "/images/scp/2.jpg",
     ],
         videos:[
-                "/videos/scp/3.mov",
-      "/videos/scp/1.mov",
-      "/videos/scp/2.mov",
+                "/videos/scp/3.mp4",
+      "/videos/scp/1.mp4",
+      "/videos/scp/2.mp4",
     ],
    process: [
   {
@@ -354,7 +354,7 @@ The visual identity combines checkerboard patterns, saturated colors and retro-i
 
   {
     image: "/images/scp/p3.jpg",
-    text: "Developing early concepts around movement, community, transformation and safe spaces within the music industry."
+    text: "Developing early concepts around mp4ement, community, transformation and safe spaces within the music industry."
   },
 
   {
