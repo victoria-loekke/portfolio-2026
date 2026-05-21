@@ -33,7 +33,7 @@ export const projects = [
     ],
     videos: [
   "/videos/aaben/v1.mov",
-  "/videos/aaben/v2.mov"
+  "/videos/aaben/v2.mp4"
 ],
   process: [
   {

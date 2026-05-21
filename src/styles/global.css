@@ -33,31 +33,6 @@ html.dark body {
 }
 
 /* FONTS */
-
-@font-face {
-  font-family: "Neue Haas Grotesk";
-  src: url("fonts/NHaasGrotesk-Rg.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Neue Haas Grotesk";
-  src: url("fonts/NHaasGrotesk-Md.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Neue Haas Grotesk";
-  src: url("fonts/NHaasGrotesk-Bd.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Anton";
   src: url("/fonts/Anton-Regular.ttf") format("truetype");
@@ -159,22 +134,25 @@ html.dark header button {
   color: #f5f3ef;
 }
 
-/* THEME TOGGLE */
+
 
 .theme-toggle {
   position: fixed;
   left: 1.5rem;
   bottom: 1.5rem;
   z-index: 9999;
-font-size: clamp(0.9rem,1vw + 0.4rem,1.2rem);
+  font-size: clamp(0.9rem,1vw + 0.4rem,1.2rem);
   background: transparent;
   border: none;
-  cursor: pointer;
-
+  cursor: pointer; 
   font-weight: 900;
 }
 
-/* TEXT MASK */
+.theme-toggle:hover{
+  opacity: 50%;
+}
+
+
 
 html.dark .text-mask {
   filter: brightness(1.15) contrast(1.2);

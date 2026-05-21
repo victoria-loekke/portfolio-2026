@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Victoria Løkke" current="home">
   <div
-    class="absolute top-[50%] lg:top-[51%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
+    class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center lg:top-[51%]"
   >
     <div class="text-mask fade-blur">
       <h1>VICTORIAS</h1>
@@ -25,29 +25,29 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
   <div class="year">2026</div>
-  <button id="theme-toggle" class="hidden lg:block theme-toggle">dark mode</button>
+  <button id="theme-toggle" class="theme-toggle hidden lg:block"
+    >dark mode</button
+  >
 
-   <script>
+  <script>
     import "../scripts/index.js";
   </script>
 </Layout>
 
 <style>
-.fade-blur {
-  animation: blurFade 1.5s ease forwards;
-}
-
-@keyframes blurFade {
-  from {
-    filter: blur(8px);
-
+  .fade-blur {
+    animation: blurFade 1.5s ease forwards;
   }
 
-  to {
-    filter: blur(0px);
-  
+  @keyframes blurFade {
+    from {
+      filter: blur(8px);
+    }
+
+    to {
+      filter: blur(0px);
+    }
   }
-}
   .text-mask {
     background-image: url("/images/test.jpg");
     background-size: cover;
@@ -73,7 +73,7 @@ import Layout from "../layouts/Layout.astro";
 
   .text-mask h2 {
     font-family: "Monsieur", cursive;
-   font-size: clamp(5rem, 14vw, 25vw);
+    font-size: clamp(5rem, 14vw, 25vw);
     line-height: 1.4;
     font-weight: 400;
     margin: 0;
@@ -100,8 +100,8 @@ import Layout from "../layouts/Layout.astro";
   /* MOBILE */
 
   @media (max-width: 768px) {
-  .text-mask {
-   filter: blur(0.5px) contrast(120%) saturate(120%);
-  }
+    .text-mask {
+      filter: blur(0.5px) contrast(120%) saturate(120%);
+    }
   }
 </style>
