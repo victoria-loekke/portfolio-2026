@@ -95,7 +95,8 @@ const { project } = Astro.props;
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
+                poster={project.image}
               >
                 <source src={video} type="video/mp4" />
               </video>
