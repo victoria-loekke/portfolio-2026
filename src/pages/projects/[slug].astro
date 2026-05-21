@@ -286,6 +286,10 @@ const { project } = Astro.props;
 
     const videos = document.querySelectorAll(".project-video");
 
+    videos.forEach((video) => {
+      video.playbackRate = 2;
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
