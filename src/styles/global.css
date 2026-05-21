@@ -60,7 +60,7 @@ html.dark body {
 
 @font-face {
   font-family: "Anton";
-  src: url("fonts/Anton-Regular.ttf") format("truetype");
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -68,7 +68,7 @@ html.dark body {
 
 @font-face {
   font-family: "Ballet";
-  src: url("fonts/Ballet-Regular-VariableFont_opsz.ttf")
+  src: url("/fonts/Ballet-Regular-VariableFont_opsz.ttf")
     format("truetype");
   font-weight: 900;
   font-style: normal;
@@ -77,7 +77,7 @@ html.dark body {
 
 @font-face {
   font-family: "Monsieur";
-  src: url("fonts/MonsieurLaDoulaise-Regular.ttf")
+  src: url("/fonts/MonsieurLaDoulaise-Regular.ttf")
     format("truetype");
   font-weight: 900;
   font-style: normal;
