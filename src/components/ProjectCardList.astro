@@ -8,60 +8,135 @@ const { project } = Astro.props;
   data-project={project.slug}
 >
   <div
-    class="list grid grid-cols-4 items-end border-t border-[#191817] transition-colors duration-300 hover:bg-stone-100 dark-hover"
+    class="list dark-hover grid grid-cols-4 items-end overflow-hidden border-t border-[#191817] transition-colors duration-300 hover:bg-stone-100"
   >
     <img src={project.image} alt={project.client} />
 
     <div class="px-4 py-4">
-      <h3 class="bold">Who?</h3>
+      <p class="mb-1 text-xs opacity-40">Client</p>
       <h3>{project.client}</h3>
     </div>
 
     <div class="px-4 py-4">
-      <h3 class="bold">What?</h3>
+      <p class="mt-4 mb-1 text-xs opacity-40">Type</p>
       <h3>{project.case}</h3>
     </div>
 
     <div class="px-4 py-4">
-      <h3 class="bold">When?</h3>
+      <p class="mt-4 mb-1 text-xs opacity-40">Date</p>
       <h3>{project.date}</h3>
     </div>
+  </div>
+
+  <!-- FLOATING IMAGE -->
+  <div class="cursor-preview">
+    <img src={project.image} alt={project.client} />
   </div>
 </a>
 
 <style>
-.bold {
-  font-weight: 900;
-}
+  .project-card {
+    position: relative;
+    display: block;
+  }
 
-.project-card {
-  position: relative;
-  display: block;
-}
+  .project-card > .list img {
+    width: 100%;
+    height: 205px;
 
-.project-card img {
-  width: 100%;
-  height: 180px;
-  display: block;
+    display: block;
 
-  aspect-ratio: 1/1;
-  object-fit: cover;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 
-  transition:
-    filter 0.4s ease,
-    opacity 0.4s ease;
-}
+    transition:
+      opacity 0.4s ease,
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
+  .project-card:hover > .list img {
+    opacity: 0.92;
+  }
 
-.project-card:hover img {
-  opacity: 0.9;
-}
+  html.dark .list {
+    border-color: rgba(255, 255, 255, 0.15);
+  }
 
-html.dark .list {
-  border-color: rgba(255,255,255,0.15);
-}
+  html.dark .dark-hover:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
 
-html.dark .dark-hover:hover {
-  background: rgba(255,255,255,0.05);
-}
+  /* FLOATING CURSOR IMAGE */
+
+  .cursor-preview {
+    position: fixed;
+
+    width: 300px;
+    aspect-ratio: 1/1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    left: 0;
+    top: 0;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+
+    will-change: transform;
+  }
+
+  .cursor-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: contrast(1.05) saturate(1.05);
+  }
+
+  .project-card:hover .cursor-preview {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  @media (max-width: 768px) {
+    .cursor-preview {
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  const cards = document.querySelectorAll(".project-card");
+
+  cards.forEach((card) => {
+    const preview = card.querySelector(".cursor-preview");
+
+    card.addEventListener("mousemove", (e) => {
+      preview.style.left = `${e.clientX + 20}px`;
+      preview.style.top = `${e.clientY + 20}px`;
+    });
+
+    card.addEventListener("mouseenter", () => {
+      preview.style.opacity = "1";
+    });
+
+    card.addEventListener("mouseleave", () => {
+      preview.style.opacity = "0";
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    document.querySelectorAll(".cursor-preview").forEach((preview) => {
+      preview.style.opacity = "0";
+    });
+  });
+</script>
