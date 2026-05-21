@@ -8,7 +8,7 @@ const { project } = Astro.props;
     data-gallery={[project.image, ...project.gallery].join(",")}
   >
     <div class="slider-track">
-      {[project.image, ...project.gallery].map((img) => <img src={img} />)}
+      {[project.image, ...project.gallery].map((img) => <img src={img} loading="lazy"/>)}
     </div>
   </div>
 

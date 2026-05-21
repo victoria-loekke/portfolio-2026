@@ -304,7 +304,7 @@ The visual identity combines checkerboard patterns, saturated colors and retro-i
     image: "/images/torsk/square.png",
     gallery: [
      "/images/torsk/1.jpg",
-          "/images/torsk/2.jpg",
+    "/images/torsk/2.jpg",
                "/images/torsk/3.jpg",
 
     ],

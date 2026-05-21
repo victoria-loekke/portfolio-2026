@@ -7,7 +7,7 @@ const { project } = Astro.props;
   class="project-card"
   data-project={project.slug}
 >
-  <img src={project.image} alt={project.title} />
+  <img src={project.image} alt={project.title} loading="lazy"/>
 
   <div class="overlay">
     <div class="flex flex-wrap items-baseline">
