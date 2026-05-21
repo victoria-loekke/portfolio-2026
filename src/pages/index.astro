@@ -85,21 +85,8 @@ import Layout from "../layouts/Layout.astro";
   /* MOBILE */
 
   @media (max-width: 768px) {
-    .top-mask {
-      top: 4vw;
-    }
-
-    .top-mask h1 {
-      font-size: 24vw;
-      line-height: 0.9;
-    }
-
-    .bottom-mask {
-      bottom: 8vw;
-    }
-
-    .bottom-mask h2 {
-      font-size: 22vw;
-    }
+  .text-mask {
+   filter: blur(0.5px) contrast(120%) saturate(120%);
+  }
   }
 </style>
