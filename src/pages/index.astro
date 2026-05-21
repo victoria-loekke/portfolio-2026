@@ -3,14 +3,14 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Victoria Løkke" current="home">
-
-
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+  <div
+    class="absolute top-[50%] lg:top-[51%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center"
+  >
     <div class="text-mask">
       <h1>VICTORIAS</h1>
     </div>
 
-    <div class="text-mask">
+    <div class="text-mask mt-12 lg:mt-6">
       <h2>Portfolio</h2>
     </div>
   </div>
@@ -25,12 +25,16 @@ import Layout from "../layouts/Layout.astro";
     </p>
   </div>
   <div class="year">2026</div>
+  <button id="theme-toggle" class="theme-toggle">dark mode</button>
+
+   <script>
+    import "../scripts/index.js";
+  </script>
 </Layout>
 
 <style>
-  
   .text-mask {
-    background-image: url("/images/privat/1.jpg");
+    background-image: url("/images/test.jpg");
     background-size: cover;
     background-position: center;
 
@@ -44,7 +48,7 @@ import Layout from "../layouts/Layout.astro";
 
   .text-mask h1 {
     font-family: "Anton", sans-serif;
-    font-size: 18vw;
+    font-size: clamp(18vw, 10vw + 4rem, 26vw);
     line-height: 0.9;
     letter-spacing: -0.02em;
     font-weight: 900;
@@ -54,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
 
   .text-mask h2 {
     font-family: "Monsieur", cursive;
-    font-size: 14vw;
+   font-size: clamp(5rem, 14vw, 25vw);
     line-height: 1.4;
     font-weight: 400;
     margin: 0;

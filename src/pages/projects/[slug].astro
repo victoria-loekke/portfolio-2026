@@ -14,7 +14,6 @@ const { project } = Astro.props;
 
 <Layout title={project.client} current="project">
   <div class="grid gap-8 pt-4 lg:min-h-[75vh] lg:grid-cols-2">
-    <!-- LEFT SIDE -->
     <div class="flex flex-col justify-between">
       <div></div>
 
@@ -23,7 +22,6 @@ const { project } = Astro.props;
           go back
         </a>
 
-        <!-- COLUMN 1 -->
         <div>
           <p class="mb-1 text-xs opacity-40">Client</p>
           <p class="text-sm">{project.client}</p>
@@ -37,7 +35,6 @@ const { project } = Astro.props;
           </p>
         </div>
 
-        <!-- COLUMN 2 -->
         <div>
           <p class="mb-1 text-xs opacity-40">Tools</p>
 
@@ -53,7 +50,6 @@ const { project } = Astro.props;
           <p class="text-sm">{project.link ?? "—"}</p>
         </div>
 
-        <!-- DESCRIPTION -->
         <div class="col-span-2 pt-4">
           <p class="mb-2 text-xs opacity-40">Description</p>
 
@@ -64,7 +60,6 @@ const { project } = Astro.props;
       </div>
     </div>
 
-    <!-- HERO IMAGE -->
     <div>
       <img
         src={project.image}
@@ -74,7 +69,6 @@ const { project } = Astro.props;
     </div>
   </div>
 
-  <!-- GALLERY -->
   <div class="mt-8 flex flex-col gap-3 md:hidden">
     {
       project.gallery.map((img) => (
@@ -94,7 +88,6 @@ const { project } = Astro.props;
     <div id="views">
       <div data-layout="project">
         <div class="flex flex-col gap-4">
-          <!-- VIDEOS -->
           {
             project.videos?.map((video) => (
               <video
@@ -109,7 +102,6 @@ const { project } = Astro.props;
             ))
           }
 
-          <!-- IMAGES -->
           {
             project.gallery.map((img) => (
               <img class="w-full" src={img} alt={project.client} />
@@ -172,63 +164,7 @@ const { project } = Astro.props;
 
   <button id="toTopBtn" class="to-top hidden"> To top </button>
 
-  <style>
-    .text {
-      white-space: pre-line;
-    }
-    .gallery img {
-      padding-top: 6px;
-    }
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.92);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
-
-    .lightbox.hidden {
-      display: none;
-    }
-
-    .lightbox img {
-      max-width: 92vw;
-      max-height: 92vh;
-      object-fit: contain;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      color: white;
-      z-index: 10000;
-    }
-
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: white;
-      z-index: 10000;
-    }
-
-    .prev {
-      left: 24px;
-    }
-
-    .next {
-      right: 24px;
-    }
-
-    .gallery-item {
-      cursor: pointer;
-    }
-  </style>
-
-  <script>
+  <script type="module">
     const buttons = document.querySelectorAll("[data-view]");
     const layouts = document.querySelectorAll("[data-layout]");
     document.querySelector('[data-view="project"]').classList.add("active");
@@ -340,8 +276,7 @@ const { project } = Astro.props;
 
       if (e.key === "ArrowLeft") showPrev();
     });
-  </script>
-  <script>
+
     const videos = document.querySelectorAll(".project-video");
 
     const observer = new IntersectionObserver(
@@ -366,3 +301,59 @@ const { project } = Astro.props;
     });
   </script>
 </Layout>
+
+<style>
+  .text {
+    white-space: pre-line;
+  }
+  .gallery img {
+    padding-top: 6px;
+  }
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .lightbox.hidden {
+    display: none;
+  }
+
+  .lightbox img {
+    max-width: 92vw;
+    max-height: 92vh;
+    object-fit: contain;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: #f5f3ef;
+    z-index: 10000;
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f5f3ef;
+    z-index: 10000;
+  }
+
+  .prev {
+    left: 24px;
+  }
+
+  .next {
+    right: 24px;
+  }
+
+  .gallery-item {
+    cursor: pointer;
+  }
+</style>
