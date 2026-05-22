@@ -14,13 +14,13 @@ import Layout from "../layouts/Layout.astro";
       <h2>Portfolio</h2>
     </div>
   </div>
-
+  <h1 class="sr-only">Victoria Løkke — Coded Designer & Front-End Developer</h1>
   <div
-    class="info absolute top-1/2 left-1/2 z-1000 -translate-x-1/2 -translate-y-1/2 text-center"
+    class="info absolute top-1/2 left-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2 text-center"
   >
     <p>
+      visual communication<br />
       coded designer<br />
-      front-end developer<br />
       copenhagen based
     </p>
   </div>
@@ -41,11 +41,11 @@ import Layout from "../layouts/Layout.astro";
 
   @keyframes blurFade {
     from {
-      filter: blur(8px);
+      filter: blur(8px) contrast(100%) saturate(100%);
     }
 
     to {
-      filter: blur(0px);
+      filter: blur(0px) contrast(110%) saturate(110%);
     }
   }
   .text-mask {
@@ -57,8 +57,6 @@ import Layout from "../layouts/Layout.astro";
     background-clip: text;
 
     color: transparent;
-
-    filter: contrast(120%) saturate(120%);
   }
 
   .text-mask h1 {
@@ -81,7 +79,7 @@ import Layout from "../layouts/Layout.astro";
 
   .info p {
     font-family: "Arial Narrow", sans-serif;
-    font-size: clamp(0.7rem, 0.8vw, 1rem);
+    font-size: clamp(0.9rem, 0.8vw, 1rem);
     line-height: 1;
     text-transform: uppercase;
     font-weight: 900;

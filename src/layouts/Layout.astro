@@ -19,7 +19,9 @@ const { title = "Portfolio", current = "" } = Astro.props;
     />
 
     <script is:inline>
-      if (localStorage.getItem("theme") === "dark") {
+      const isMobile = window.innerWidth < 768;
+
+      if (!isMobile && localStorage.getItem("theme") === "dark") {
         document.documentElement.classList.add("dark");
       }
     </script>

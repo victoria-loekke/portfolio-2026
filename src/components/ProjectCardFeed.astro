@@ -4,24 +4,20 @@ const { project } = Astro.props;
 
 <a href={`/projects/${project.slug}`} class="project-card">
   <div
-    class="slider"
+    class="slider slider-bred"
     data-gallery={[project.image, ...project.gallery].join(",")}
   >
     <div class="slider-track">
-      {[project.image, ...project.gallery].map((img) => <img src={img} loading="lazy"/>)}
+      {
+        [project.image, ...project.gallery].map((img) => (
+          <img src={img} loading="lazy" />
+        ))
+      }
     </div>
   </div>
-
-  <div class="flex flex-wrap items-baseline">
-
+  <div class="slider-bred">
     <h3 class="mt-2">{project.client}</h3>
-  </div>
-  <div class="flex flex-wrap items-baseline">
-  
     <h3>{project.case}</h3>
-  </div>
-  <div class="flex flex-wrap items-baseline">
-
     <h3>{project.date}</h3>
   </div>
 </a>
@@ -44,6 +40,11 @@ const { project } = Astro.props;
     overflow: hidden;
     aspect-ratio: 1/1;
     position: relative;
+  }
+
+  .slider-bred {
+    max-width: 570px;
+    margin: 0 auto;
   }
 
   .slider-track {
