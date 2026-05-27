@@ -12,7 +12,7 @@ export const projects = [
       "HTML, css & JavaScript",
       "Adobe Photoshop",
     ],
-    link: "https://label-maker.netlify.app/",
+    link: "https://aaben-label-maker.netlify.app/",
     description:
       "A coded label generator for Danish craft brewery ÅBEN, letting users design unique beer labels through sliders and options, previewed live on a 3D can.",
     text: `In this project i created a coded label generator for the Dansih brewery ÅBEN. The different output is defined by pre-made sliders and options that allows the user to design a new variation each time while still keeping the visual style alike. 
