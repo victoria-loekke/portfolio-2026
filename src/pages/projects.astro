@@ -10,11 +10,10 @@ import ProjectCardFeed from "../components/ProjectCardFeed.astro";
 
 <Layout title="Projects — Victoria Løkke" current="projects">
   <div class="hidden lg:block">
-    <div id="filterBar" class="flex justify-between">
-      <button data-view="grid">grid</button>
-      <button data-view="list">list</button>
-      <button data-view="feed">feed</button>
-      <button data-view="full">full</button>
+    <div id="filterBar">
+      <button data-view="grid">Grid</button>
+      <a>/</a>
+      <button data-view="list">List</button>
     </div>
 
     <div id="views">
@@ -32,17 +31,7 @@ import ProjectCardFeed from "../components/ProjectCardFeed.astro";
         </div>
       </div>
 
-      <div data-layout="feed" class="hidden">
-        <div class="mx-auto grid w-180 grid-cols-1 gap-6">
-          {projects.map((project) => <ProjectCardFeed project={project} />)}
-        </div>
-      </div>
 
-      <div data-layout="full" class="hidden">
-        <div class="flex flex-col gap-10">
-          {projects.map((project) => <ProjectCardFull project={project} />)}
-        </div>
-      </div>
     </div>
   </div>
 
