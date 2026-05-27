@@ -5,14 +5,9 @@ import List from "../components/List.astro";
 
 <Layout title="About Victoria" current="about">
   <div class="hidden lg:block">
-    <div id="filterBar" class="flex justify-between border-b border-[#191817]">
-      <button data-view="about">about me</button>
-      <button data-view="school">education</button>
-      <button data-view="work">experience</button>
-    </div>
 
     <div id="views">
-      <div data-layout="about">
+      <div >
         <div class="relative my-25 flex justify-center 2xl:my-35">
           <div class="w-[350px]">
             <img
@@ -93,106 +88,69 @@ import List from "../components/List.astro";
           </div>
         </div>
 
-        <a>education</a>
 
-        <div class="dark-border flex flex-col">
-          <List
-            text="Danish School of Media and Journalism"
-            date="2024—27"
-            line="Coded Design — Visual Communication"
-          />
 
-          <List
-            text="Copenhagen School of Design and Technology"
-            date="2020—22"
-            line="Multimediadesign"
-          />
-
-          <List
-            text="Metaforá Studio Arts Barcelona"
-            date="2019"
-            line="Semester in Fine Arts"
-          />
-
-          <List
-            text="Ordrup Gymnasium"
-            date="2015—18"
-            line="Upper Secondary Education"
-          />
+        <div id="filterBar" class="mt-10">
+          <button data-view="school">education</button>
+          <a>/</a>
+          <button data-view="work">experience</button>
         </div>
 
-        <a>experience</a>
-        <div class="dark-border flex flex-col">
-          <List
-            text="Red Cross Denmark"
-            date="2025—"
-            line="Volunteer work in a Red Cross second-hand shop."
-          />
+        <div data-layout="school">
+          <div class="dark-border flex flex-col border-t">
+            <List
+              text="Danish School of Media and Journalism"
+              date="2024—27"
+              line="Coded Design — Visual Communication"
+            />
 
-          <List
-            text="Independent freelancer"
-            date="2023—"
-            line="Designing and developing visual identities, websites and digital experiences."
-          />
+            <List
+              text="Copenhagen School of Design and Technology"
+              date="2020—22"
+              line="Multimediadesign"
+            />
 
-          <List
-            text="Founder of Vicz Gemz"
-            date="2022—24"
-            line="Founded a tooth gem brand collaborating with brands including Ganni and TikTok."
-          />
+            <List
+              text="Metaforá Studio Arts Barcelona"
+              date="2019"
+              line="Semester in Fine Arts"
+            />
+
+            <List
+              text="Ordrup Gymnasium"
+              date="2015—18"
+              line="Upper Secondary Education"
+            />
+          </div>
+        </div>
+
+        <div data-layout="work" class="hidden">
+          <div class="dark-border flex flex-col border-t mb-30">
+            <List
+              text="Red Cross Denmark"
+              date="2025—"
+              line="Volunteer work in a Red Cross second-hand shop."
+            />
+
+            <List
+              text="Independent freelancer"
+              date="2023—"
+              line="Designing and developing visual identities, websites and digital experiences."
+            />
+
+            <List
+              text="Founder of Vicz Gemz"
+              date="2022—24"
+              line="Founded a tooth gem brand collaborating with brands including Ganni and TikTok."
+            />
+          </div>
         </div>
       </div>
     </div>
 
-    <div data-layout="school" class="hidden">
-      <div class="dark-border flex flex-col">
-        <List
-          text="Danish School of Media and Journalism"
-          date="2024—27"
-          line="Coded Design — Visual Communication"
-        />
 
-        <List
-          text="Copenhagen School of Design and Technology"
-          date="2020—22"
-          line="Multimediadesign"
-        />
 
-        <List
-          text="Metaforá Studio Arts Barcelona"
-          date="2019"
-          line="Semester in Fine Arts"
-        />
 
-        <List
-          text="Ordrup Gymnasium"
-          date="2015—18"
-          line="Upper Secondary Education"
-        />
-      </div>
-    </div>
-
-    <div data-layout="work" class="hidden">
-      <div class="dark-border flex flex-col">
-        <List
-          text="Red Cross Denmark"
-          date="2025—"
-          line="Volunteer work in a Red Cross second-hand shop."
-        />
-
-        <List
-          text="Independent freelancer"
-          date="2023—"
-          line="Designing and developing visual identities, websites and digital experiences."
-        />
-
-        <List
-          text="Founder of Vicz Gemz"
-          date="2022—24"
-          line="Founded a tooth gem brand collaborating with brands including Ganni and TikTok."
-        />
-      </div>
-    </div>
   </div>
   <div class="lg:hidden">
     <img
