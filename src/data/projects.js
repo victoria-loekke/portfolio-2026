@@ -143,7 +143,7 @@ description:
     programs: [
       "Adobe Illustrator"
     ],
-    link: "https://acleanspirit.dk/",
+    link: null,
     description:
       "A label design for A Clean Spirit's Ron Sostenible Triple Cask, a sustainable Danish rum brand sailing quality rum across the Atlantic from Cuba.",
     text: `A Clean Spirit is a Danish sustainable spirits brand committed to quality and environmental responsibility, sailing their rum across the Atlantic from Cuba rather than shipping it by freight.
