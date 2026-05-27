@@ -56,82 +56,39 @@ export const projects = [
   }
 ]
   },
-
-
-
   {
-    slug: "snowqueen",
-    date: "March 2026",
-    duration: "1 week",
-    client: "DMJX - School project",
-    case: "Interactive Storytelling",
-    title: "Interactive Story",
-
-     programs: [
-      "Touchdesigner",
-      "MadMapper",
-        "Adobe Photoshop"
+    slug: "hotelfrihavnen",
+    date: "Feburay 2021",
+    duration: "6 months",
+    client: "Hotel Frihavnen",
+    case: "Visual identity & website develop",
+    title: "Hotel Frihavnen",
+    programs: [
+      "Wordpress - Elementor",
+      "HTML, css & JavaScript",
+      "Adobe illustrator",
+      "Figma"
     ],
+    link: "https://www.hotelfrihavnen.dk/",
+    description:
+      "A full visual identity and website for Hotel Frihavnen, a boutique hotel in Copenhagen's Nordhavn district, built on the history of the neighbourhood.",
+      text: `Hotel Frihavnen is a boutique hotel located in Nordhavn, Copenhagen, a neighbourhood built on the site of the old free port, known in Danish as "Frihavnen." The hotel's identity is deeply rooted in this history.
+      I was commissioned to develop the full visual identity and website independently, working directly with the hotel team throughout the process. The logo is redrawn from an old "Frihavnen" harbour sign, a nod to the area's industrial past. The colour palette is drawn directly from the hotel's interior: deep navy, warm terracotta and sand tones that reflect the physical space.
+      The website was built in WordPress and is currently live. It includes bilingual support in Danish and English, and a booking flow for guests.
+      This was a solo commercial project, from concept and visual identity through to final development and delivery.`,
+    image: "/images/hf/hf.jpg",
+    gallery: [
+      "/images/hf/1.jpg",
+       "/images/hf/2.jpg",
+     "/images/hf/3.jpg",
+       "/images/hf/4.jpg",
+       "/images/hf/5.jpg",
+        "/images/hf/6.jpg",
 
-    link: null,
-description:
-      "An interactive installation for H.C. Andersen's The Snow Queen - bringing the story's emotions to life through abstract visuals and projection mapping.",
-    text: `This project was created as a group school project in collaboration with H.C. Andersen's House. The installation retells The Snow Queen not through narrative, but through emotion, translating the coldness, chaos and frozen heart of the story into a sensory physical space.
-    We built the visuals in TouchDesigner, creating abstract videos representing the feelings of the fairytale rather than its plot. The videos were projected onto a handmade "ice mirror" - white cardboard assembled to resemble a frozen surface, alongside plastic sheeting and white lace curtains, giving the space a dreamlike, wintry atmosphere.
-    Using MadMapper, we projection mapped a video of a beating heart onto the mirror, referencing Kaj, whose heart turns to ice in the story.
-    The installation is motion-triggered and interactive: when a visitor sits in the chair and remains still for three seconds, the projections activate. Surrounding them in ice and chaos. The stillness required to trigger it mirrors the emotional paralysis of the story itself.`,
-    image: "/images/snowqueen/sq_front_square.jpg",
-     gallery: [
-        "/images/snowqueen/4.jpg",
-     "/images/snowqueen/1.jpg",
-    "/images/snowqueen/5.jpg",
-        "/images/snowqueen/6.jpg",
-        "/images/snowqueen/2.jpg",
-            "/images/snowqueen/3.jpg",
-         
     ],
-    videos: [
-  "/videos/snowqueen/v1.mp4",
-    "/videos/snowqueen/v2.mp4",
-      "/videos/snowqueen/v3.mp4",
-        "/videos/snowqueen/v4.mp4",
-],
-  process: [
-  {
-    image: "/images/snowqueen/p1.jpg",
-    text: "Breaking down The Snow Queen into emotions, environments, symbols and sensory elements rather than narrative structure."
-  },
-
-  {
-      image: "/images/snowqueen/p2.jpg",
-    text: "Collecting references around ice, translucency, frozen spaces and dreamlike environments to define the visual atmosphere."
-  },
-
-  {
-    image: "/images/snowqueen/p3.jpg",
-    text: "Testing how lace curtains, translucent materials and reflective surfaces could transform the space into an immersive environment."
-  },
-    {
-    image: "/images/snowqueen/p4.jpg",
-    text: "Building the physical installation using translucent plastic, lace curtains and a handmade “ice mirror”."
-  },
-      {
-    image: "/images/snowqueen/p5.jpg",
-    text: "Projection mapping a beating heart onto the mirror, referencing Kaj’s frozen heart from the fairytale."
-  },
-        {
-    image: "/images/snowqueen/p6.jpg",
-    text: "Testing the interactive installation and how projections changes around the visitor’s body."
-  },
-          {
-    image: "/images/snowqueen/p7.jpg",
-    text: "Spending hours in touchdesinger making videos inspired by emotions, memories and dream sequences"
-  },
-            {
-    image: "/images/snowqueen/p8.jpg",
-    text: "The final installation "
-  },
-]
+    videos:[
+      "/videos/hf/v1.mp4",
+    ]
   },
 
   {
@@ -248,42 +205,82 @@ The visual identity combines checkerboard patterns, saturated colors and retro-i
   },
 ]
   },
-  {
-    slug: "hotelfrihavnen",
-    date: "Feburay 2021",
-    duration: "6 months",
-    client: "Hotel Frihavnen",
-    case: "Visual identity & website develop",
-    title: "Hotel Frihavnen",
-    programs: [
-      "Wordpress - Elementor",
-      "HTML, css & JavaScript",
-      "Adobe illustrator",
-      "Figma"
-    ],
-    link: "https://www.hotelfrihavnen.dk/",
-    description:
-      "A full visual identity and website for Hotel Frihavnen, a boutique hotel in Copenhagen's Nordhavn district, built on the history of the neighbourhood.",
-      text: `Hotel Frihavnen is a boutique hotel located in Nordhavn, Copenhagen, a neighbourhood built on the site of the old free port, known in Danish as "Frihavnen." The hotel's identity is deeply rooted in this history.
-      I was commissioned to develop the full visual identity and website independently, working directly with the hotel team throughout the process. The logo is redrawn from an old "Frihavnen" harbour sign, a nod to the area's industrial past. The colour palette is drawn directly from the hotel's interior: deep navy, warm terracotta and sand tones that reflect the physical space.
-      The website was built in WordPress and is currently live. It includes bilingual support in Danish and English, and a booking flow for guests.
-      This was a solo commercial project, from concept and visual identity through to final development and delivery.`,
-    image: "/images/hf/hf.jpg",
-    gallery: [
-      "/images/hf/1.jpg",
-       "/images/hf/2.jpg",
-     "/images/hf/3.jpg",
-       "/images/hf/4.jpg",
-       "/images/hf/5.jpg",
-        "/images/hf/6.jpg",
 
+
+  {
+    slug: "snowqueen",
+    date: "March 2026",
+    duration: "1 week",
+    client: "DMJX - School project",
+    case: "Interactive Storytelling",
+    title: "Interactive Story",
+
+     programs: [
+      "Touchdesigner",
+      "MadMapper",
+        "Adobe Photoshop"
     ],
-    videos:[
-      "/videos/hf/v1.mp4",
-    ]
+
+    link: null,
+description:
+      "An interactive installation for H.C. Andersen's The Snow Queen - bringing the story's emotions to life through abstract visuals and projection mapping.",
+    text: `This project was created as a group school project in collaboration with H.C. Andersen's House. The installation retells The Snow Queen not through narrative, but through emotion, translating the coldness, chaos and frozen heart of the story into a sensory physical space.
+    We built the visuals in TouchDesigner, creating abstract videos representing the feelings of the fairytale rather than its plot. The videos were projected onto a handmade "ice mirror" - white cardboard assembled to resemble a frozen surface, alongside plastic sheeting and white lace curtains, giving the space a dreamlike, wintry atmosphere.
+    Using MadMapper, we projection mapped a video of a beating heart onto the mirror, referencing Kaj, whose heart turns to ice in the story.
+    The installation is motion-triggered and interactive: when a visitor sits in the chair and remains still for three seconds, the projections activate. Surrounding them in ice and chaos. The stillness required to trigger it mirrors the emotional paralysis of the story itself.`,
+    image: "/images/snowqueen/sq_front_square.jpg",
+     gallery: [
+        "/images/snowqueen/4.jpg",
+     "/images/snowqueen/1.jpg",
+    "/images/snowqueen/5.jpg",
+        "/images/snowqueen/6.jpg",
+        "/images/snowqueen/2.jpg",
+            "/images/snowqueen/3.jpg",
+         
+    ],
+    videos: [
+  "/videos/snowqueen/v1.mp4",
+    "/videos/snowqueen/v2.mp4",
+      "/videos/snowqueen/v3.mp4",
+        "/videos/snowqueen/v4.mp4",
+],
+  process: [
+  {
+    image: "/images/snowqueen/p1.jpg",
+    text: "Breaking down The Snow Queen into emotions, environments, symbols and sensory elements rather than narrative structure."
   },
 
+  {
+      image: "/images/snowqueen/p2.jpg",
+    text: "Collecting references around ice, translucency, frozen spaces and dreamlike environments to define the visual atmosphere."
+  },
 
+  {
+    image: "/images/snowqueen/p3.jpg",
+    text: "Testing how lace curtains, translucent materials and reflective surfaces could transform the space into an immersive environment."
+  },
+    {
+    image: "/images/snowqueen/p4.jpg",
+    text: "Building the physical installation using translucent plastic, lace curtains and a handmade “ice mirror”."
+  },
+      {
+    image: "/images/snowqueen/p5.jpg",
+    text: "Projection mapping a beating heart onto the mirror, referencing Kaj’s frozen heart from the fairytale."
+  },
+        {
+    image: "/images/snowqueen/p6.jpg",
+    text: "Testing the interactive installation and how projections changes around the visitor’s body."
+  },
+          {
+    image: "/images/snowqueen/p7.jpg",
+    text: "Spending hours in touchdesinger making videos inspired by emotions, memories and dream sequences"
+  },
+            {
+    image: "/images/snowqueen/p8.jpg",
+    text: "The final installation "
+  },
+]
+  },
   {
     slug: "torsk",
     date: "June 2025",
