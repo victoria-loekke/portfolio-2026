@@ -26,9 +26,7 @@ import List from "../components/List.astro";
           <div
             class="ommig absolute top-1/2 left-1/2 z-10 w-[92%] max-w-[1400px] -translate-x-1/2 -translate-y-1/2"
           >
-            <p
-              class="ommig text-center text-3xl leading-none font-medium"
-            >
+            <p class="ommig text-center text-3xl leading-none font-medium">
               Hi, I'm Victoria Løkke, a front-end developer and designer from
               Copenhagen, Denmark, currently studying Coded Design at the Danish
               School of media and design, where I get to do what I love most:
@@ -190,5 +188,11 @@ import List from "../components/List.astro";
   .ommig {
     mix-blend-mode: exclusion;
     color: #f5f3ef;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .love img {
+      height: 430px;
+    }
   }
 </style>
