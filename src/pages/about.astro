@@ -5,9 +5,8 @@ import List from "../components/List.astro";
 
 <Layout title="About Victoria" current="about">
   <div class="hidden lg:block">
-
     <div id="views">
-      <div >
+      <div>
         <div class="relative my-25 flex justify-center 2xl:my-35">
           <div class="w-[350px]">
             <img
@@ -88,11 +87,9 @@ import List from "../components/List.astro";
           </div>
         </div>
 
-
-
         <div id="filterBar" class="mt-16">
           <button data-view="school">education</button>
-          <a>/</a>
+          <a>—</a>
           <button data-view="work">experience</button>
         </div>
 
@@ -125,7 +122,7 @@ import List from "../components/List.astro";
         </div>
 
         <div data-layout="work" class="hidden">
-          <div class="dark-border flex flex-col border-t mb-30">
+          <div class="dark-border mb-30 flex flex-col border-t">
             <List
               text="Red Cross Denmark"
               date="2025—"
@@ -147,10 +144,6 @@ import List from "../components/List.astro";
         </div>
       </div>
     </div>
-
-
-
-
   </div>
   <div class="lg:hidden">
     <img
