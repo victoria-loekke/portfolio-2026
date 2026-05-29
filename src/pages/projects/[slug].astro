@@ -47,6 +47,7 @@ const { project } = Astro.props;
           }
 
           <p class="mt-4 mb-1 text-xs opacity-40">Link</p>
+
           {
             project.link ? (
               <a
@@ -54,7 +55,7 @@ const { project } = Astro.props;
                 target="_blank"
                 class="project-link text-sm"
               >
-                {project.link}
+                visit project
               </a>
             ) : (
               <p class="text-sm">—</p>
@@ -65,7 +66,7 @@ const { project } = Astro.props;
         <div class="col-span-2 pt-4">
           <p class="mb-2 text-xs opacity-40">Description</p>
 
-          <p class="text-lg leading-snug md:text-2xl">
+          <p class="max-w-2xl text-lg leading-relaxed md:text-xl">
             {project.description}
           </p>
         </div>
@@ -89,58 +90,78 @@ const { project } = Astro.props;
     }
   </div>
 
-  <div id="filterBar" class="mt-8 hidden justify-between md:flex">
-    <button data-view="project">the project</button>
-    {project.process && <button data-view="process">process</button>}
-    <button data-view="text">read more</button>
-    <button data-view="gallery">gallery</button>
+  <div id="filterBar" class="mt-8 hidden md:block">
+    <button data-view="project">Project</button>
+    <a class="opacity-50">/</a>
+
+    {project.process && <button data-view="process">Process</button>}
+    <a class="opacity-50">/</a>
+    <button data-view="gallery">Gallery</button>
   </div>
 
   <div class="hidden md:block">
     <div id="views">
-      <div data-layout="project">
-        <div class="flex flex-col gap-4">
-          <iframe
-            class="aspect-video"
-            src={project.link}
-            title="Åben Label Maker"></iframe>
-          {
-            project.videos?.map((video) => (
-              <video
-                class="project-video w-full"
-                muted
-                loop
-                playsinline
-                preload="none"
-                poster={project.image}
-              >
-                <source src={video} type="video/mp4" />
-              </video>
-            ))
-          }
+      <!-- PROJECT -->
 
+      <div data-layout="project">
+        <div class="flex flex-col gap-16">
           {
-            project.gallery.map((img) => (
-              <img
-                class="w-full"
-                src={img}
-                alt={project.client}
-                loading="lazy"
-              />
-            ))
+            project.content?.map((item) => {
+              if (item.type === "image") {
+                return (
+                  <img
+                    class="w-full"
+                    src={item.src}
+                    alt={project.client}
+                    loading="lazy"
+                  />
+                );
+              }
+
+              if (item.type === "video") {
+                return (
+                  <video
+                    class="project-video w-full"
+                    muted
+                    loop
+                    playsinline
+                    autoplay
+                    preload="metadata"
+                    poster={project.image}
+                  >
+                    <source src={item.src} type="video/mp4" />
+                  </video>
+                );
+              }
+
+              if (item.type === "text") {
+                return (
+                  <div class="mx-auto max-w-2xl py-2">
+                    <p class="project-text text-2xl leading-relaxed">
+                      {item.text}
+                    </p>
+                  </div>
+                );
+              }
+            })
           }
         </div>
       </div>
+
+      <!-- PROCESS -->
+
       {
         project.process && (
           <div data-layout="process" class="hidden">
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-10">
               {project.process.map((item) => (
-                <div class="grid gap-4 lg:grid-cols-[2fr_1fr]">
+                <div class="grid gap-6 lg:grid-cols-[2fr_1fr]">
                   <img class="w-full" src={item.image} alt={project.client} />
 
                   <div class="flex items-end">
-                    <p class="text-2xl leading-relaxed">{item.text}</p>
+                    <p class="project-text text-2xl leading-relaxed">
+                      {item.text}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -149,9 +170,7 @@ const { project } = Astro.props;
         )
       }
 
-      <div data-layout="text" class="hidden">
-        <p class="text mt-6 mb-10 text-4xl">{project.text}</p>
-      </div>
+      <!-- GALLERY -->
 
       <div data-layout="gallery" class="hidden">
         <div class="grid grid-cols-2 gap-4 lg:grid-cols-3">
@@ -173,23 +192,27 @@ const { project } = Astro.props;
           }
         </div>
       </div>
-      <div id="lightbox" class="lightbox hidden">
-        <button id="closeLightbox" class="close-btn"> × </button>
 
-        <button id="prevBtn" class="nav-btn prev"> ← </button>
+      <!-- LIGHTBOX -->
+
+      <div id="lightbox" class="lightbox hidden">
+        <button id="closeLightbox" class="close-btn">×</button>
+
+        <button id="prevBtn" class="nav-btn prev">←</button>
 
         <img id="lightboxImg" src="" alt="" />
 
-        <button id="nextBtn" class="nav-btn next"> → </button>
+        <button id="nextBtn" class="nav-btn next">→</button>
       </div>
     </div>
   </div>
 
-  <button id="toTopBtn" class="to-top hidden"> To top </button>
+  <button id="toTopBtn" class="to-top hidden">to top</button>
 
   <script type="module">
     const buttons = document.querySelectorAll("[data-view]");
     const layouts = document.querySelectorAll("[data-layout]");
+
     document.querySelector('[data-view="project"]').classList.add("active");
 
     buttons.forEach((btn) => {
@@ -303,7 +326,7 @@ const { project } = Astro.props;
     const videos = document.querySelectorAll(".project-video");
 
     videos.forEach((video) => {
-      video.playbackRate = 2;
+      video.playbackRate = 1.5;
     });
 
     const observer = new IntersectionObserver(
@@ -319,7 +342,7 @@ const { project } = Astro.props;
         });
       },
       {
-        threshold: 0.4,
+        threshold: 0.35,
       },
     );
 
@@ -330,16 +353,14 @@ const { project } = Astro.props;
 </Layout>
 
 <style>
-  .text {
+  .project-text {
     white-space: pre-line;
   }
-  .gallery img {
-    padding-top: 6px;
-  }
+
   .lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.92);
+    background: rgba(0, 0, 0, 0.94);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -371,6 +392,19 @@ const { project } = Astro.props;
     color: #f5f3ef;
     z-index: 10000;
   }
+
+  .prev {
+    left: 24px;
+  }
+
+  .next {
+    right: 24px;
+  }
+
+  .gallery-item {
+    cursor: pointer;
+  }
+
   .project-link {
     display: block;
 
@@ -386,17 +420,5 @@ const { project } = Astro.props;
 
   .project-link:hover {
     opacity: 0.5;
-  }
-
-  .prev {
-    left: 24px;
-  }
-
-  .next {
-    right: 24px;
-  }
-
-  .gallery-item {
-    cursor: pointer;
   }
 </style>

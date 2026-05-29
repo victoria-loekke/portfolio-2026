@@ -6,381 +6,681 @@ export const projects = [
     client: "ÅBEN brewery",
     title: "ÅBEN label maker",
     case: "Coded label generator",
+
     programs: [
       "p5.js",
       "Three.js",
-      "HTML, css & JavaScript",
+      "HTML, CSS & JavaScript",
       "Adobe Photoshop",
     ],
+
     link: "https://aaben-label-maker.netlify.app/",
+
     description:
-      "A coded label generator for Danish craft brewery ÅBEN, letting users design unique beer labels through sliders and options, previewed live on a 3D can.",
-    text: `In this project i created a coded label generator for the Dansih brewery ÅBEN. The different output is defined by pre-made sliders and options that allows the user to design a new variation each time while still keeping the visual style alike. 
-      The project is created by making the graphic design and shapes in p5.js. Then i used shoelace to connect UI elements that lets the user interact with the design and create their own. I set up the generator by using HTML, CSS and JavaScript and connected a 3D model with Three.JS to show how the design would look on a beer can to give the user a better idea of how the design would work in practice. 
-      Since ÅBEN’s beer catalog is holding more then 400 different beers it was important to me that the design would be visually different and fun for each beer. Which also is why when you enter you can choose the beer type and then the design is different for each. 
-      My generator is using photo manipulation. For each beer you get a image and normal mode - so you can choose the graphic design or add a photo and manipulate it.`,
+      "A coded label generator for Danish craft brewery ÅBEN, letting users design unique beer labels through sliders and options, previewed live on a 3D can. The project combines generative graphics, interactive UI systems and motion-based presentation to create hundreds of unique label variations while maintaining a coherent visual identity.",
+
     image: "/images/aaben/square.jpg",
-    gallery: [
-           "/images/aaben/1.jpg",
-     "/images/aaben/2.jpg",
-     "/images/aaben/3.jpg",
-       "/images/aaben/4.jpg",
-     "/images/aaben/5.jpg",
-     "/images/aaben/6.jpg",
-     "/images/aaben/7.jpg",
-     "/images/aaben/8.jpg",
-     "/images/aaben/9.jpg",
-    ],
-    videos: [
-  "/videos/aaben/v1.mp4",
-  "/videos/aaben/v2.mp4"
-],
-  process: [
-  {
-    image: "/images/aaben/p1.jpg",
-    text: "Initial visual reserach references around texture, nightlife, mp4ement and distorted reflections to shape the visual atmosphere of the generator."
-  },
 
-  {
-    image: "/images/aaben/p2.jpg",
-    text: "Looking into ÅBEN’s existing labels and visual language to understand recurring patterns and brand consistency."
-  },
-
-  {
-    image: "/images/aaben/p3.jpg",
-    text: "Researching ÅBEN’s current labels to understand consistency, variation and brand identity."
-  },
-   {
-    image: "/images/aaben/p4.jpg",
-    text: "Developing a colour system that could generate many unique combinations while maintaining visual consistency."
-  }
-]
-  },
-
-
-
-  {
-    slug: "snowqueen",
-    date: "March 2026",
-    duration: "1 week",
-    client: "DMJX - School project",
-    case: "Interactive Storytelling",
-    title: "Interactive Story",
-
-     programs: [
-      "Touchdesigner",
-      "MadMapper",
-        "Adobe Photoshop"
-    ],
-
-    link: null,
-description:
-      "An interactive installation for H.C. Andersen's The Snow Queen - bringing the story's emotions to life through abstract visuals and projection mapping.",
-    text: `This project was created as a group school project in collaboration with H.C. Andersen's House. The installation retells The Snow Queen not through narrative, but through emotion, translating the coldness, chaos and frozen heart of the story into a sensory physical space.
-    We built the visuals in TouchDesigner, creating abstract videos representing the feelings of the fairytale rather than its plot. The videos were projected onto a handmade "ice mirror" - white cardboard assembled to resemble a frozen surface, alongside plastic sheeting and white lace curtains, giving the space a dreamlike, wintry atmosphere.
-    Using MadMapper, we projection mapped a video of a beating heart onto the mirror, referencing Kaj, whose heart turns to ice in the story.
-    The installation is motion-triggered and interactive: when a visitor sits in the chair and remains still for three seconds, the projections activate. Surrounding them in ice and chaos. The stillness required to trigger it mirrors the emotional paralysis of the story itself.`,
-    image: "/images/snowqueen/sq_front_square.jpg",
-     gallery: [
-        "/images/snowqueen/4.jpg",
-     "/images/snowqueen/1.jpg",
-    "/images/snowqueen/5.jpg",
-        "/images/snowqueen/6.jpg",
-        "/images/snowqueen/2.jpg",
-            "/images/snowqueen/3.jpg",
-         
-    ],
-    videos: [
-  "/videos/snowqueen/v1.mp4",
-    "/videos/snowqueen/v2.mp4",
-      "/videos/snowqueen/v3.mp4",
-        "/videos/snowqueen/v4.mp4",
-],
-  process: [
-  {
-    image: "/images/snowqueen/p1.jpg",
-    text: "Breaking down The Snow Queen into emotions, environments, symbols and sensory elements rather than narrative structure."
-  },
-
-  {
-      image: "/images/snowqueen/p2.jpg",
-    text: "Collecting references around ice, translucency, frozen spaces and dreamlike environments to define the visual atmosphere."
-  },
-
-  {
-    image: "/images/snowqueen/p3.jpg",
-    text: "Testing how lace curtains, translucent materials and reflective surfaces could transform the space into an immersive environment."
-  },
-    {
-    image: "/images/snowqueen/p4.jpg",
-    text: "Building the physical installation using translucent plastic, lace curtains and a handmade “ice mirror”."
-  },
+    content: [
       {
-    image: "/images/snowqueen/p5.jpg",
-    text: "Projection mapping a beating heart onto the mirror, referencing Kaj’s frozen heart from the fairytale."
-  },
-        {
-    image: "/images/snowqueen/p6.jpg",
-    text: "Testing the interactive installation and how projections changes around the visitor’s body."
-  },
-          {
-    image: "/images/snowqueen/p7.jpg",
-    text: "Spending hours in touchdesinger making videos inspired by emotions, memories and dream sequences"
-  },
-            {
-    image: "/images/snowqueen/p8.jpg",
-    text: "The final installation "
-  },
-]
-  },
+        type: "video",
+        src: "/videos/aaben/v1.mp4",
+      },
 
-  {
-    slug: "acleanspirit",
-    date: "March 2023",
-    duration: "1 month",
-    client: "A Clean Spirit",
-    case: "Label Design",
-    programs: [
-      "Adobe Illustrator"
+      {
+        type: "text",
+        text: "The project was built as a coded label generator for ÅBEN brewery, allowing users to create unique beer labels through live interaction. The system combines generative graphics, motion and customisable layouts while maintaining the recognisable ÅBEN aesthetic.",
+      },
+
+      {
+        type: "image",
+        src: "/images/aaben/1.jpg",
+      },
+
+      {
+        type: "image",
+        src: "/images/aaben/2.jpg",
+      },
+
+      {
+        type: "text",
+        text: "The visual system was designed to support a large amount of variation. Users can manipulate colours, shapes, textures and compositions while previewing the output directly on a 3D can model built with Three.js.",
+      },
+
+      {
+        type: "video",
+        src: "/videos/aaben/v2.mp4",
+      },
+
+      {
+        type: "image",
+        src: "/images/aaben/3.jpg",
+      },
+
+      {
+        type: "image",
+        src: "/images/aaben/4.jpg",
+      },
     ],
-    link: null,
-    description:
-      "A label design for A Clean Spirit's Ron Sostenible Triple Cask, a sustainable Danish rum brand sailing quality rum across the Atlantic from Cuba.",
-    text: `A Clean Spirit is a Danish sustainable spirits brand committed to quality and environmental responsibility, sailing their rum across the Atlantic from Cuba rather than shipping it by freight.
-    I designed the label for their Ron Sostenible Triple Cask, an 8-year-old rum aged in three different casks: Bourbon, Pedro Ximénez and Oloroso. The design needed to reflect both the premium quality of the product and the brand's sustainable values.
-    The label was designed entirely in Adobe Illustrator, with careful attention to typography, hierarchy and the detailed information required on a spirits label - including cask type, voyage number and alcohol content. The design went into commercial production and is currently on shelves.`,
-    image: "/images/acs/acs_front_square.jpg",
+
     gallery: [
-     "/images/acs/9.jpg",
-     "/images/acs/10.jpg",
-     "/images/acs/11.jpg"
-    ],
-  },
-  {
-    slug: "hellokitty",
-    date: "October 2025",
-    duration: "2 weeks",
-    client: "Hello Kitty (School Project)",
-    case: "Trained mascot AI geneator",
-    title: "Hello Kitty Magazine",
-    programs:[
-          "HTML, css & JavaScript",
-          "Flux Lora",
-          "Nano Banana",
-
-    ],
-    link: "https://hellokittymagazine.netlify.app/",
-    description:
-      "A trained AI image model and coded magazine website - reimagining Hello Kitty as a high-fashion icon through a fictional editorial universe.",
-      text: `
-      This school project explored the intersection of AI image generation, editorial design and web development, built around one unexpected subject: Hello Kitty.
-      I trained a custom LoRA model on Hello Kitty's visual identity, generating a series of analogue-feeling, fashion-forward images placing her in cinematic and editorial contexts, from Vogue covers to chaotic tea parties. The goal was to push the mascot into unexpected, high-fashion territory while keeping her instantly recognisable.
-      The images were used to populate a fully coded fictional magazine, Hello Kitty Magazine, complete with articles, fashion editorials, a horoscope section and a "Most Read" feed. The website was built in HTML, CSS and JavaScript and designed to feel like a real editorial publication.
-      The project is a study in creative world-building: using AI as a design tool and code as a medium for storytelling.`,
-    image: "/images/hk/hk.jpg",
-    gallery: [
-      "/images/hk/1.jpg",
-      "/images/hk/2.jpg",
-       "/images/hk/3.jpg",
-     "/images/hk/4.jpg",
-      "/images/hk/5.jpg",
-        "/images/hk/6.jpg",
-    ],
-
-        videos: [
-  "/videos/hk/v1.mp4",
-
-],
-  },
-    {
-    slug: "rss",
-    date: "January 2025",
-    duration: "3 weeks",
-    client: "Ready Set Spaghetti (Fictional)",
-    case: "Visual identity",
-    programs: [
-      "HTML, css & JavaScript",
-      "Adobe Illustrator",
-    ],
-    link: null,
-    description:
-      "A visual identity for Ready Set Spaghetti, a fictional fast food restaurant built around a retro Italian-American aesthetic, a hand-drawn mascot and a full brand system.",
-    text: `Ready Set Spaghetti was my first exam project, a fictional fast food brand inspired by retro American diners and Italian-American visual culture.
-The project explored how nostalgia, typography and character design could shape a recognisable and playful visual identity. Through research into fast food chains, vintage packaging and Italian food culture, I developed a complete branding system including logo, typography, packaging, kiosk screens and a hand-drawn mascot character named Tommy Tomat.
-
-The visual identity combines checkerboard patterns, saturated colors and retro-inspired typography to create a brand universe balancing humour, nostalgia and fast food aesthetics.`,
-    image: "/images/rss/square2.jpeg",
-    gallery: [
-     "/images/rss/1.jpg",
-     "/images/rss/2.jpg",
-     "/images/rss/3.jpg",
-     "/images/rss/4.jpg",
-     "/images/rss/5.jpg",     
-     "/images/rss/6.jpg"
+      "/images/aaben/1.jpg",
+      "/images/aaben/2.jpg",
+      "/images/aaben/3.jpg",
+      "/images/aaben/4.jpg",
+      "/images/aaben/5.jpg",
+      "/images/aaben/6.jpg",
+      "/images/aaben/7.jpg",
+      "/images/aaben/8.jpg",
+      "/images/aaben/9.jpg",
     ],
 
     process: [
-  {
-    image: "/images/rss/p1.jpg",
-    text: "Researching existing fast food branding, mascots and ordering systems to understand visual language and customer experience."
-  },
-
-  {
-      image: "/images/rss/p2.jpg",
-    text: "Developing the visual direction through Italian-inspired references, food culture and retro restaurant aesthetics."
-  },
-
-  {
-    image: "/images/rss/p3.jpg",
-    text: "Exploring typography that balanced retro friendliness, readability and Italian-inspired character."
-  },
-    {
-    image: "/images/rss/p4.jpg",
-    text: "Building a colour palette inspired by classic Italian restaurants and retro fast food branding."
-  },
       {
-    image: "/images/rss/p5.jpg",
-    text: "Designing “Tommy Tomat” — a mascot inspired by vintage fast food characters and retro cartoon styles."
+        image: "/images/aaben/p1.jpg",
+        text: "Initial visual research references around texture, nightlife, movement and distorted reflections to shape the visual atmosphere.",
+      },
+
+      {
+        image: "/images/aaben/p2.jpg",
+        text: "Researching ÅBEN’s existing labels and visual language to understand recurring patterns and consistency.",
+      },
+
+      {
+        image: "/images/aaben/p3.jpg",
+        text: "Exploring variation systems and how different outputs could still feel visually connected.",
+      },
+
+      {
+        image: "/images/aaben/p4.jpg",
+        text: "Developing colour systems and interaction logic for the final generator.",
+      },
+    ],
   },
-        {
-    image: "/images/rss/p6.jpg",
-    text: "Applying the visual identity across packaging, takeaway materials and self-service kiosk interfaces."
-  },
-]
-  },
+
   {
-    slug: "hotelfrihavnen",
-    date: "Feburay 2021",
-    duration: "6 months",
-    client: "Hotel Frihavnen",
-    case: "Visual identity & website develop",
-    title: "Hotel Frihavnen",
-    programs: [
-      "Wordpress - Elementor",
-      "HTML, css & JavaScript",
-      "Adobe illustrator",
-      "Figma"
-    ],
-    link: "https://www.hotelfrihavnen.dk/",
-    description:
-      "A full visual identity and website for Hotel Frihavnen, a boutique hotel in Copenhagen's Nordhavn district, built on the history of the neighbourhood.",
-      text: `Hotel Frihavnen is a boutique hotel located in Nordhavn, Copenhagen, a neighbourhood built on the site of the old free port, known in Danish as "Frihavnen." The hotel's identity is deeply rooted in this history.
-      I was commissioned to develop the full visual identity and website independently, working directly with the hotel team throughout the process. The logo is redrawn from an old "Frihavnen" harbour sign, a nod to the area's industrial past. The colour palette is drawn directly from the hotel's interior: deep navy, warm terracotta and sand tones that reflect the physical space.
-      The website was built in WordPress and is currently live. It includes bilingual support in Danish and English, and a booking flow for guests.
-      This was a solo commercial project, from concept and visual identity through to final development and delivery.`,
-    image: "/images/hf/hf.jpg",
-    gallery: [
-      "/images/hf/1.jpg",
-       "/images/hf/2.jpg",
-     "/images/hf/3.jpg",
-       "/images/hf/4.jpg",
-       "/images/hf/5.jpg",
-        "/images/hf/6.jpg",
+    slug: "snowqueen",
 
+    date: "March 2026",
+    duration: "1 week",
+
+    client: "DMJX - School project",
+
+    case: "Interactive storytelling installation",
+     title: "Interactive Story",
+
+    programs: [
+      "TouchDesigner",
+      "MadMapper",
+      "Adobe Photoshop",
     ],
-    videos:[
-      "/videos/hf/v1.mp4",
-    ]
+    link:null,
+
+    description:
+      "An interactive installation inspired by H.C. Andersen’s The Snow Queen, translating the emotional atmosphere of the fairytale into projection mapping, motion-triggered visuals and immersive spatial design.",
+
+    image: "/images/snowqueen/sq_front_square.jpg",
+
+    content: [
+      {
+        type: "video",
+        src: "/videos/snowqueen/v1.mp4",
+      },
+
+      {
+        type: "text",
+        text: "The installation reinterprets The Snow Queen through emotions rather than narrative. Instead of retelling the fairytale directly, the project transforms coldness, isolation and emotional paralysis into an immersive sensory space.",
+      },
+
+      {
+        type: "image",
+        src: "/images/snowqueen/1.jpg",
+      },
+
+      {
+        type: "video",
+        src: "/videos/snowqueen/v2.mp4",
+      },
+
+      {
+        type: "image",
+        src: "/images/snowqueen/2.jpg",
+      },
+
+      {
+        type: "text",
+        text: "Projection mapping and motion-triggered interaction were used to surround the visitor with fragmented visuals inspired by frozen mirrors, dream states and emotional chaos.",
+      },
+
+      {
+        type: "video",
+        src: "/videos/snowqueen/v3.mp4",
+      },
+
+      {
+        type: "image",
+        src: "/images/snowqueen/3.jpg",
+      },
+    ],
+
+    gallery: [
+      "/images/snowqueen/1.jpg",
+      "/images/snowqueen/2.jpg",
+      "/images/snowqueen/3.jpg",
+      "/images/snowqueen/4.jpg",
+      "/images/snowqueen/5.jpg",
+      "/images/snowqueen/6.jpg",
+    ],
+
+    process: [
+      {
+        image: "/images/snowqueen/p1.jpg",
+        text: "Breaking down The Snow Queen into emotions, symbols and sensory elements.",
+      },
+
+      {
+        image: "/images/snowqueen/p2.jpg",
+        text: "Collecting references around ice, translucency and dreamlike environments.",
+      },
+
+      {
+        image: "/images/snowqueen/p3.jpg",
+        text: "Testing reflective materials and projection surfaces for the installation.",
+      },
+
+      {
+        image: "/images/snowqueen/p4.jpg",
+        text: "Building the physical installation and projection mapped mirror.",
+      },
+    ],
   },
 
+  {
+  slug: "acleanspirit",
 
+  date: "March 2023",
+  duration: "1 month",
+
+  client: "A Clean Spirit",
+
+  case: "Label design",
+
+  programs: [
+    "Adobe Illustrator",
+  ],
+
+  link: null,
+
+  description:
+    "A label design for A Clean Spirit's Ron Sostenible Triple Cask — a sustainable Danish rum brand transporting premium rum across the Atlantic by sail rather than freight shipping. The project focused on combining premium spirits aesthetics with sustainability and detailed storytelling.",
+
+  image: "/images/acs/acs_front_square.jpg",
+
+  content: [
+    {
+      type: "image",
+      src: "/images/acs/9.jpg",
+    },
+
+    {
+      type: "text",
+      text: "The label was created for Ron Sostenible Triple Cask, an 8-year-old rum aged across Bourbon, Pedro Ximénez and Oloroso casks. The design needed to communicate both craftsmanship and sustainability while fitting naturally into the premium spirits market.",
+    },
+
+    {
+      type: "image",
+      src: "/images/acs/10.jpg",
+    },
+
+    {
+      type: "text",
+      text: "The visual identity balances classic rum packaging with modern typography and carefully structured information hierarchy. Special attention was given to texture, typography and production details to make the label feel tactile and refined.",
+    },
+
+    {
+      type: "image",
+      src: "/images/acs/11.jpg",
+    },
+  ],
+
+  gallery: [
+    "/images/acs/9.jpg",
+    "/images/acs/10.jpg",
+    "/images/acs/11.jpg",
+  ],
+},
+  {
+    slug: "hellokitty",
+
+    date: "October 2025",
+    duration: "2 weeks",
+
+    client: "Hello Kitty (School Project)",
+
+    case: "Trained mascot AI geneator",
+        title: "Hello Kitty Magazine",
+
+    programs: [
+      "HTML, CSS & JavaScript",
+      "Flux LoRA",
+      "Nano Banana",
+    ],
+
+    link: "https://hellokittymagazine.netlify.app/",
+
+    description:
+      "A fictional editorial universe reimagining Hello Kitty as a high-fashion icon through AI image generation, coded storytelling and digital magazine design.",
+
+    image: "/images/hk/hk.jpg",
+
+    content: [
+      {
+        type: "video",
+        src: "/videos/hk/v1.mp4",
+      },
+
+      {
+        type: "text",
+        text: "The project explored how AI-generated imagery could be used as a creative world-building tool. By training a custom Hello Kitty LoRA model, the mascot was transformed into a surreal editorial fashion character.",
+      },
+
+      {
+        type: "image",
+        src: "/images/hk/1.jpg",
+      },
+
+      {
+        type: "image",
+        src: "/images/hk/2.jpg",
+      },
+
+      {
+        type: "text",
+        text: "The generated images were integrated into a fully coded fictional magazine featuring editorials, articles, fashion spreads and interactive sections.",
+      },
+
+      {
+        type: "image",
+        src: "/images/hk/3.jpg",
+      },
+
+      {
+        type: "image",
+        src: "/images/hk/4.jpg",
+      },
+    ],
+
+    gallery: [
+      "/images/hk/1.jpg",
+      "/images/hk/2.jpg",
+      "/images/hk/3.jpg",
+      "/images/hk/4.jpg",
+      "/images/hk/5.jpg",
+      "/images/hk/6.jpg",
+    ],
+  },
+{
+  slug: "rss",
+
+  date: "January 2025",
+  duration: "3 weeks",
+
+  client: "Ready Set Spaghetti (Fictional)",
+
+  case: "Visual identity",
+
+  programs: [
+    "HTML, CSS & JavaScript",
+    "Adobe Illustrator",
+  ],
+
+  link: null,
+
+  description:
+    "A visual identity for Ready Set Spaghetti, a fictional fast food restaurant inspired by retro Italian-American diners, mascot culture and nostalgic fast food branding.",
+
+  image: "/images/rss/square2.jpeg",
+
+  content: [
+    {
+      type: "image",
+      src: "/images/rss/1.jpg",
+    },
+
+    {
+      type: "text",
+      text: "Ready Set Spaghetti was developed as a fictional fast food universe inspired by retro American diners and Italian-American visual culture.",
+    },
+
+    {
+      type: "image",
+      src: "/images/rss/2.jpg",
+    },
+
+    {
+      type: "image",
+      src: "/images/rss/3.jpg",
+    },
+
+    {
+      type: "text",
+      text: "The project explored typography, mascot design and nostalgic branding systems across packaging, menus and kiosk interfaces.",
+    },
+
+    {
+      type: "image",
+      src: "/images/rss/4.jpg",
+    },
+  ],
+
+  gallery: [
+    "/images/rss/1.jpg",
+    "/images/rss/2.jpg",
+    "/images/rss/3.jpg",
+    "/images/rss/4.jpg",
+    "/images/rss/5.jpg",
+    "/images/rss/6.jpg",
+  ],
+
+  process: [
+    {
+      image: "/images/rss/p1.jpg",
+      text: "Researching existing fast food branding and mascot systems.",
+    },
+
+    {
+      image: "/images/rss/p2.jpg",
+      text: "Collecting references from retro diners and Italian-American food culture.",
+    },
+
+    {
+      image: "/images/rss/p3.jpg",
+      text: "Developing typography and graphic systems for the identity.",
+    },
+  ],
+},
+{
+  slug: "hotelfrihavnen",
+
+  date: "February 2025",
+  duration: "6 months",
+
+  client: "Hotel Frihavnen",
+
+  case: "Visual identity & website development",
+
+  title: "Hotel Frihavnen",
+
+  programs: [
+    "WordPress - Elementor",
+    "HTML, CSS & JavaScript",
+    "Adobe Illustrator",
+    "Figma",
+  ],
+
+  link: "https://www.hotelfrihavnen.dk/",
+
+  description:
+    "A full visual identity and website for Hotel Frihavnen, a boutique hotel located in Copenhagen’s Nordhavn district. The project was built around the industrial harbour history of the area, combining historical references with a calm and contemporary digital experience.",
+
+  image: "/images/hf/hf.jpg",
+
+  content: [
+    {
+      type: "video",
+      src: "/videos/hf/v1.mp4",
+    },
+
+    {
+      type: "text",
+      text: "Hotel Frihavnen is located in Nordhavn, Copenhagen — an area historically connected to the old free port known as 'Frihavnen'. The visual identity was developed directly from this local history and the physical atmosphere of the hotel itself.",
+    },
+
+    {
+      type: "image",
+      src: "/images/hf/1.jpg",
+    },
+
+    {
+      type: "image",
+      src: "/images/hf/2.jpg",
+    },
+
+    {
+      type: "text",
+      text: "The logo was redrawn from historical harbour signage found in the area, creating a direct visual connection between the hotel and Nordhavn’s industrial past. The colour palette was based on materials and tones found throughout the hotel interior.",
+    },
+
+    {
+      type: "image",
+      src: "/images/hf/3.jpg",
+    },
+
+    {
+      type: "image",
+      src: "/images/hf/4.jpg",
+    },
+
+    {
+      type: "text",
+      text: "Alongside the identity system, I independently designed and developed the hotel’s website in WordPress, including bilingual support, booking integration and responsive layouts for both Danish and international visitors.",
+    },
+
+    {
+      type: "image",
+      src: "/images/hf/5.jpg",
+    },
+  ],
+
+  gallery: [
+    "/images/hf/1.jpg",
+    "/images/hf/2.jpg",
+    "/images/hf/3.jpg",
+    "/images/hf/4.jpg",
+    "/images/hf/5.jpg",
+    "/images/hf/6.jpg",
+  ],
+},
   {
     slug: "torsk",
+
     date: "June 2025",
     duration: "3 weeks",
+
     client: "Videnskab.dk",
-    case: "Interactive game",
+
+    case: "Interactive educational game",
+
     programs: [
-      "HTML, css & JavaScript",
+      "HTML, CSS & JavaScript",
       "Adobe Illustrator",
     ],
+
     link: "https://torskenseventyr.netlify.app/",
+
     description:
-      "An interactive educational website for Videnskab.dk, guiding children through the story of the Atlantic cod and its endangered state in Danish waters.",
-    text: `This school project was built in the visual style of Videnskab.dk, Denmark's leading science communication platform, as an interactive learning experience aimed at children.
-    The subject is the Atlantic cod - its life, its habitat and the threats it faces in Danish waters. Rather than presenting information as static text, the site invites children to explore with their mouse, uncovering facts and interactions hidden across the page.
-    The experience includes an interactive storytelling section where the user plays as Torkel, a newly hatched cod navigating the ocean; a flip-card explainer comparing fishing methods (trawling vs. net fishing); a knowledge quiz testing what children have learned; and a drag-and-drop ecosystem game where users place marine creatures in their correct habitats in the Danish sea.
-    The project was built entirely in HTML, CSS and JavaScript, with a strong focus on visual storytelling and making complex environmental topics accessible and engaging for a young audience.`,
+      "An interactive educational website guiding children through the life of the Atlantic cod and the environmental threats facing Danish waters through games, storytelling and playful interaction.",
+
     image: "/images/torsk/square.png",
-    gallery: [
-     "/images/torsk/1.jpg",
-    "/images/torsk/2.jpg",
-               "/images/torsk/3.jpg",
 
+    content: [
+      {
+        type: "video",
+        src: "/videos/torsk/1.mp4",
+      },
+
+      {
+        type: "text",
+        text: "The project was developed as an interactive learning universe inspired by Videnskab.dk’s communication style. Instead of static information, children explore the site through movement, hidden interactions and mini games.",
+      },
+
+      {
+        type: "image",
+        src: "/images/torsk/1.jpg",
+      },
+
+      {
+        type: "image",
+        src: "/images/torsk/2.jpg",
+      },
+
+      {
+        type: "text",
+        text: "Users follow the story of Torkel, a newly hatched cod navigating the ocean while learning about ecosystems, fishing methods and climate-related challenges.",
+      },
+
+      {
+        type: "image",
+        src: "/images/torsk/3.jpg",
+      },
     ],
-       videos: [
-     "/videos/torsk/1.mp4",
 
+    gallery: [
+      "/images/torsk/1.jpg",
+      "/images/torsk/2.jpg",
+      "/images/torsk/3.jpg",
     ],
   },
+  {
+  slug: "shecanplay",
+
+  date: "November 2025",
+  duration: "3 weeks",
+
+  client: "SheCanPlay",
+
+  case: "Visual identity & interactive web experience",
+  title:"SheCanPlay",
+
+  programs: [
+    "HTML, CSS & JavaScript",
+    "Figma",
+  ],
+
+  link: "https://shecanplay-dots.netlify.app/",
+
+  description:
+    "A visual identity and interactive web experience for SheCanPlay — a Danish music community supporting young women and gender minorities pursuing professional careers in music. The project combines playful digital branding, coded tools and community-focused storytelling.",
+
+  image: "/images/scp/square.jpg",
+
+  content: [
     {
-    slug: "shecanplay",
-    date: "November 2025",
-    client: "SheCanPlay",
-    case: "Visual identity",
-    programs: ["HTML, css & JavaScript", "Figma"],
-    link:"https://shecanplay-dots.netlify.app/",
-    description:
-      "A visual identity and web solution for SheCanPlay, a Danish music community empowering young women and gender minorities to build professional careers in music.",
-      text: `SheCanPlay is a Danish non-profit association supporting young women and gender minorities between 15 and 26 in building sustainable, professional careers in music - through mentoring, industry access, and community.
-      Our concept was "Introducing", the idea that SheCanPlay introduces its members to the music industry, to opportunities, and to each other. This concept shaped every visual and coded decision we made.
-      The visual identity was built around dots as a core graphic element, reflecting both the community structure and the musical connection to sound and rhythm. The colour palette landed on a bold pink with hand-drawn doodles, giving the brand a warm, energetic and personal feel. We also developed a coded dot generator, allowing users to upload images or videos and generate dotted outputs, with full control over dot size, colour, gap and density.
-      I coded a live music visualiser for SheCanPlay: a web-based asset that listens to audio input and generates real-time visuals that react to the music, with bass controlling dot size and mp4ement, midrange controlling how many dots are active, and treble driving the colours.
-      The project was created as a group school project at DMJX, covering visual identity, web development and coded tools.`,
-    image: "/images/scp/square.jpg",
-    gallery: [
-      "/images/scp/13.jpg",
-      "/images/scp/14.jpg",
-      "/images/scp/15.jpg",
-      "/images/scp/16.jpg",
-      "/images/scp/1.jpg",
-      "/images/scp/2.jpg",
-    ],
-        videos:[
-                "/videos/scp/3.mp4",
-      "/videos/scp/1.mp4",
-      "/videos/scp/2.mp4",
-    ],
-   process: [
-  {
-    image: "/images/scp/p1.jpg",
-    text: "Mapping SheCanPlay’s visual touchpoints across social media, events, editorial content and merchandise."
-  },
+      type: "video",
+      src: "/videos/scp/1.mp4",
+    },
 
-  {
-    image: "/images/scp/p2.jpg",
-    text: "Analysing competing music communities and organisations to identify visual positioning and communication styles."
-  },
+    {
+      type: "text",
+      text: "The concept behind the project was 'Introducing' — the idea that SheCanPlay introduces its members to the music industry, to opportunities and to each other. This idea shaped both the visual identity and the interactive digital tools.",
+    },
 
-  {
-    image: "/images/scp/p3.jpg",
-    text: "Developing early concepts around mp4ement, community, transformation and safe spaces within the music industry."
-  },
+    {
+      type: "image",
+      src: "/images/scp/13.jpg",
+    },
 
-  {
-    image: "/images/scp/p4.jpg",
-    text: "Collecting references from music culture, experimental typography and playful digital aesthetics."
-  },
+    {
+      type: "image",
+      src: "/images/scp/14.jpg",
+    },
 
-  {
-    image: "/images/scp/p5.jpg",
-    text: "Sketching hand-drawn symbols, stars and doodles to create a more personal and expressive identity."
-  },
+    {
+      type: "text",
+      text: "The identity system was built around dots as a core graphic element, inspired by rhythm, sound and community structures. Hand-drawn doodles and bold pink tones were used to create a playful and energetic visual universe.",
+    },
 
-  {
-    image: "/images/scp/p6.jpg",
-    text: "Testing colour palettes, layouts and graphic systems for the visual identity and website."
-  },
+    {
+      type: "video",
+      src: "/videos/scp/2.mp4",
+    },
 
-  {
-    image: "/images/scp/p7.jpg",
-    text: "Designing wireframes and interface concepts focused on community, events and artist visibility."
-  },
+    {
+      type: "image",
+      src: "/images/scp/15.jpg",
+    },
 
-  {
-    image: "/images/scp/p8.jpg",
-    text: "Applying the identity across Instagram posts, reels and community-driven content."
-  }
-]
-  },
+    {
+      type: "text",
+      text: "As part of the coded experience, we developed a dot generator allowing users to upload images or videos and transform them into animated dotted visuals with customisable controls for size, density and colour.",
+    },
+
+    {
+      type: "video",
+      src: "/videos/scp/3.mp4",
+    },
+
+    {
+      type: "image",
+      src: "/images/scp/16.jpg",
+    },
+
+    {
+      type: "text",
+      text: "I also developed a live music visualiser reacting to audio input in real time. Bass frequencies controlled movement and scale, while midrange and treble affected the visual density and colour system.",
+    },
+
+    {
+      type: "image",
+      src: "/images/scp/1.jpg",
+    },
+
+    {
+      type: "image",
+      src: "/images/scp/2.jpg",
+    },
+  ],
+
+  gallery: [
+    "/images/scp/13.jpg",
+    "/images/scp/14.jpg",
+    "/images/scp/15.jpg",
+    "/images/scp/16.jpg",
+    "/images/scp/1.jpg",
+    "/images/scp/2.jpg",
+  ],
+
+  process: [
+    {
+      image: "/images/scp/p1.jpg",
+      text: "Mapping SheCanPlay’s visual touchpoints across events, social media and community platforms.",
+    },
+
+    {
+      image: "/images/scp/p2.jpg",
+      text: "Researching music communities and organisations to identify visual positioning and tone.",
+    },
+
+    {
+      image: "/images/scp/p3.jpg",
+      text: "Developing concepts around movement, rhythm, community and accessibility.",
+    },
+
+    {
+      image: "/images/scp/p4.jpg",
+      text: "Collecting references from music culture, experimental typography and digital aesthetics.",
+    },
+
+    {
+      image: "/images/scp/p5.jpg",
+      text: "Exploring hand-drawn graphic elements and playful visual systems.",
+    },
+
+    {
+      image: "/images/scp/p6.jpg",
+      text: "Testing colour systems, layouts and responsive web interactions.",
+    },
+
+    {
+      image: "/images/scp/p7.jpg",
+      text: "Designing wireframes and interactive experiences for the final platform.",
+    },
+
+    {
+      image: "/images/scp/p8.jpg",
+      text: "Applying the identity across social content, motion and coded tools.",
+    },
+  ],
+},
+  
 ];
